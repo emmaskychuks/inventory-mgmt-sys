@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +10,8 @@ namespace InventoryClasses
 {
     public class Order // gets fulfilled by warehouse
     {
-        private int OrderID { get; set; }
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int OrderID { get; set; }
         public string OrderNumber { get; set; }
         public DateTime DateOrdered { get; set; }
         public Customer Customer { get; set; }

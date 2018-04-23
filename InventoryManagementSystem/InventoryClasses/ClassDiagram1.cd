@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="InventoryClasses.Customer">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAEAAAAAAAAAAAAQAEAAAAAACgAAQIAAAAAA=</HashCode>
+      <FileName>Entities\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.CustomerInvoice" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAEAAAgAQAAAAAAAAggAAAA=</HashCode>
+      <FileName>Entities\CustomerInvoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.DistributionCenter" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\DistributionCenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.ItemCategory" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAQAgAAAAAAAAAAQAAAAAAQAAAAAEABAAAAA=</HashCode>
+      <FileName>Entities\ItemCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.ItemStock" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAQAAAAAAAAAAAAAACAAAgAAAAAA=</HashCode>
+      <FileName>Entities\ItemStock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.Order">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAABIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAgQA=</HashCode>
+      <FileName>Entities\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.BackOrder">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.PackingSlip">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAIAAAAAAAACABAAAAAAAAEBA=</HashCode>
+      <FileName>Entities\PackingSlip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.Vendor" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAIAAAAAAgAAQAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Vendor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.Warehouse">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAABAAAAAAAAAAAAAAAQAAAAAAAAiAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Warehouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.InvContext" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAQAAAIAAAAAAAAAAAEAAAAAIAAAQAAA=</HashCode>
+      <FileName>InvContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.Statics" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Statics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.Migrations.initialDatabase" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201804230039072_initialDatabase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InventoryClasses.Migrations.Configuration">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Migrations\Configuration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryClasses.Properties.Settings">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

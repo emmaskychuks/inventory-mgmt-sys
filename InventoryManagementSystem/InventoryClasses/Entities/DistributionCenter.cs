@@ -9,5 +9,7 @@ namespace InventoryClasses
     public static class DistributionCenter
     {
 
+
+
     }
 }

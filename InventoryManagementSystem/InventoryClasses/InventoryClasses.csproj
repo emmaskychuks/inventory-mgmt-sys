@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,17 +47,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer.cs" />
-    <Compile Include="CustomerInvoice.cs" />
-    <Compile Include="DistributionCenter.cs" />
-    <Compile Include="ItemCategory.cs" />
-    <Compile Include="ItemLocation.cs" />
-    <Compile Include="ItemStock.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="PackingSlip.cs" />
-    <Compile Include="Vendor.cs" />
-    <Compile Include="Warehouse.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\CustomerInvoice.cs" />
+    <Compile Include="Entities\DistributionCenter.cs" />
+    <Compile Include="InvContext.cs" />
+    <Compile Include="Entities\ItemCategory.cs" />
+    <Compile Include="Entities\ItemStock.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\PackingSlip.cs" />
+    <Compile Include="Migrations\201804230039072_initialDatabase.cs" />
+    <Compile Include="Migrations\201804230039072_initialDatabase.Designer.cs">
+      <DependentUpon>201804230039072_initialDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Statics.cs" />
+    <Compile Include="Entities\Vendor.cs" />
+    <Compile Include="Entities\Warehouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804230039072_initialDatabase.resx">
+      <DependentUpon>201804230039072_initialDatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

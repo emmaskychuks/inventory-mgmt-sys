@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +10,8 @@ namespace InventoryClasses
 {
     public class CustomerInvoice
     {
-        private int CustomerInvoiceID { get; set; }
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int CustomerInvoiceID { get; set; }
 
         // if we change the order we dont want the items changing? or deletion
 
