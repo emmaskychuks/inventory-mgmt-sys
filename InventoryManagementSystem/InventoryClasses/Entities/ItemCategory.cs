@@ -16,6 +16,7 @@ namespace InventoryClasses
         public decimal Price { get; set; }
         public string Description { get; set; }
         public int RestockItemLimit { get; set; }
+        public Vendor vendor;
         public int MaxPerWarehouse { get; set; }
         public string LocationInWarehouse { get; set; }
 
