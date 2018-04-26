@@ -38,7 +38,14 @@ namespace InventoryClasses
             }
         }
 
-
+        public static int QuantityOfItemInEveryWareHouse(ItemCategory item)
+        {
+            //Quantity of a specified item from every warehouse
+            using (InvContext ctx = new InvContext())
+            {
+                return 0;
+            }
+        }
         private bool CreateBackOrder()
         {
             throw new NotImplementedException();

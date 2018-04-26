@@ -105,7 +105,7 @@ namespace InventoryClasses.Migrations
                 {
                     VendorID = 1,
                     Name = "Vendor 1",
-                    ItemProvided = 
+                    ItemProvided = new ItemCategory()
                 }
 
             );

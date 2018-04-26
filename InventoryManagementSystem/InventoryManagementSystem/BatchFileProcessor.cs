@@ -1,4 +1,5 @@
 ﻿using InventoryClasses;
+using InventoryClasses.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,37 +9,28 @@ using System.Threading.Tasks;
 
 namespace InventoryManagementSystem
 {
-    class BatchFileProcessor
+    static class BatchFileProcessor
     {
-        public string fileLocation { get; set; }
-        public string fileType { get; set; }
-        public StreamReader streamReader;
-        public int sequenceNumber { get; set; }
-        public BatchFileProcessor(string fileLocation, string fileType)
-        {
-            this.fileLocation = fileLocation;
-            this.fileType = fileType;
-            streamReader = new StreamReader(fileLocation);
-        }
-        public void ProcessFile()
+       
+        public static void ProcessFile(string fileType, string fileLocation)
         {
             try
             {
                 switch (fileType)
                 {
                     case "VendorShipment":
-                        ParseVendorShipmentFile();
+                        ParseVendorShipmentFile(fileLocation);
                         break;
                     case "CustomerOrder":
-                        ParseCustomerOrderFile();
+                        ParseCustomerOrderFile(fileLocation);
                         break;
                     default:
                         break;
                 }
             }
-            catch(FileNotFoundException e)
+            catch(InvalidDataException e)
             {
-                Console.WriteLine("File not found in {0}", fileLocation);
+                Console.WriteLine("{0} is a non-valid order type", fileLocation);
             }
         }
 
@@ -46,7 +38,7 @@ namespace InventoryManagementSystem
         /// <summary>
         /// Description: This function only works on files with no spce in between lines of records
         /// </summary>
-        private void ParseVendorShipmentFile()
+        private static void ParseVendorShipmentFile(string fileLocation)
         {
             //TODO: Find the object type to save to the database. Possibly Warehouse
             
@@ -58,16 +50,17 @@ namespace InventoryManagementSystem
             int counter = 1;
             try
             {
-                using (streamReader)
+                using (StreamReader streamReader = new StreamReader(fileLocation))
                 {
                     string line;
-                    while((line = streamReader.ReadLine()) != null)
+                    while ((line = streamReader.ReadLine()) != null)
                     {
                         if (vendorOrderExist && line.Substring(0, 1) != "T")
                         {
                             vendor.VendorID = Convert.ToInt32(line.Substring(0, 2));
-                            itemCategory.ItemCategoryID = Convert.ToInt32(line.Substring(2, 5));
-                            itemCategory.Vendor = vendor.VendorID;
+                            line = line.Remove(0, 2);
+                            itemCategory.ItemCategoryID = Convert.ToInt32(line.Substring(0, 5));
+                            vendor.ItemProvided = itemCategory;
                             itemStock.Quantity = Convert.ToInt32(line.Substring(2, 6));
                             //Validate Item
                             itemStock.ItemStored = itemCategory;
@@ -89,7 +82,7 @@ namespace InventoryManagementSystem
                             vendorOrderExist = false;
                         }
                         else
-                            throw new Exception();               
+                            throw new Exception();
                     }
                 }
             }
@@ -101,56 +94,70 @@ namespace InventoryManagementSystem
         /// <summary>
         /// Reposnsible for parsing customer order from file
         /// </summary>
-        private void ParseCustomerOrderFile()
+        private static void ParseCustomerOrderFile(string fileLocation)
         {
             string line;
             int sequence = 0;
             bool customerOrderExist = false;
-            int counter = 0;
+            int orderCounter = 0;
 
             ItemCategory itemCategory = new ItemCategory();
             Vendor vendor = new Vendor();
             ItemStock itemStock = new ItemStock();
             Customer newCustomer = new Customer();
             Order order = new Order();
+            OrderedItems orderedItems = new OrderedItems();
+            int sequenceNumber = 0;
 
             try {
-                using (streamReader)
+                using (StreamReader streamReader = new StreamReader(fileLocation))
                 {
                     while ((line = streamReader.ReadLine()) != null)
                     {
-                        if (customerOrderExist && sequenceNumber == counter)
+                        if (customerOrderExist && line.Substring(0, 1) != "T")
                         {
                             switch(line[0])
                             {
                                 case 'C':
+                                    sequenceNumber = 0;
                                     order = new Order();
-
+                                
                                     order.OrderNumber = line.Substring(1, 6);
-                                    newCustomer.CustomerID = Convert.ToInt32(line.Substring(6, 5));
-                                    newCustomer.Name = line.Substring(11, 30).Trim();
+                                    line = line.Remove(0, 6);
+                                    newCustomer.CustomerID = Convert.ToInt32(line.Substring(0, 5));
+                                    line = line.Remove(0, 5);
+                                    newCustomer.Name = line.Substring(0, 30).Trim();
+                                    line = line.Remove(0, 30);
                                     newCustomer.Address = 
-                                        line.Substring(41, 20).Trim()+ " " + line.Substring(61, 20).Trim() + " " +
-                                        line.Substring(81, 2).Trim() + " " + line.Substring(83, 9).Trim();
+                                        line.Substring(0, 20).Trim()+ " " + line.Remove(0, 20).Substring(0, 20).Trim() + " " +
+                                        line.Remove(0, 20).Substring(0, 2).Trim() + " " + line.Remove(0, 2).Substring(0, 9).Trim();
                                     break;
                                 case 'I':
                                     itemCategory = new ItemCategory();
                                     itemCategory.ItemCategoryID = Convert.ToInt32(line.Substring(0, 5));
-                                    order.ItemsOrdered.Add(itemCategory, Convert.ToInt32(line.Substring(5, 5)));
-                                    counter++;
+                                    line = line.Remove(0, 5);
+                                    orderedItems.Quantity = Convert.ToInt32(line.Substring(0, 5));
+                                    orderedItems.OrderedItemsID = itemCategory.ItemCategoryID; //TODO: Needs review
+                                    orderedItems.ItemStored = itemCategory;
+                                    orderedItems.order = order;
+                                    order.ItemsOrdered.Add(orderedItems);
+                                    //Discount code not needed from file
+                                    orderCounter++;
                                     break;
                                 case 'L':
+                                    //Check if Warehouse have Item Quantity
+                                    //Create back order if needed
                                     //Save Order
                                     int numberOfOrderedItems = Convert.ToInt32(line.Substring(1, 3));
-                                    if (counter != numberOfOrderedItems)
+                                    if (orderCounter != numberOfOrderedItems)
                                     {
                                        //Missed an ordered item
                                     }
-                                    counter = 0;
+                                    orderCounter = 0;
                                     break;
                                 case 'O':
                                     customerOrderExist = false;
-                                    //Can also be used to keep track of number of orders
+                                    //Can also be used to keep track of number of customers
                                     break;
                                 default:
                                     throw new InvalidDataException();
@@ -160,7 +167,7 @@ namespace InventoryManagementSystem
                         else if (!customerOrderExist && line.Substring(0, 2) == "HD")
                         {
                             sequence = Convert.ToInt32(line.Substring(3, 4));
-                            counter = 1;
+                            orderCounter = 1;
                             customerOrderExist = true;
                         }
                         else if (line.Substring(0, 1) == "T")
@@ -178,5 +185,20 @@ namespace InventoryManagementSystem
                 Console.WriteLine("File not found in {0}", fileLocation);
             }
         }
+
+        private static void CheckOrderedItems()
+        {
+            //Iterate through warehouses are find items that can be placed on needs to be placed in back order
+            Dictionary<ItemCategory, int> backOrderItemsAndQuantities = new Dictionary<ItemCategory, int>();
+        }
+        public static void BackOrderOperation(int remainingQuantity, ItemCategory item)
+        {
+            InvContext ctx = new InvContext();
+            BackOrder backOrder = new BackOrder();
+
+        }
+
+        
+
     }
 }

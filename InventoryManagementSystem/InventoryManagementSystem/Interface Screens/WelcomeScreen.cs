@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InventoryClasses;
 
 namespace InventoryManagementSystem
 {
@@ -24,7 +25,7 @@ namespace InventoryManagementSystem
 
         private void customerButton_Click(object sender, EventArgs e)
         {
-            //
+            new CustomerScreen().ShowDialog();
         }
 
         private void employeeButton_Click(object sender, EventArgs e)

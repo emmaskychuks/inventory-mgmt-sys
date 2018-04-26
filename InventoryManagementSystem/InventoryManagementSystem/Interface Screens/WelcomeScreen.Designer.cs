@@ -61,6 +61,7 @@
             this.Controls.Add(this.CustomerButton);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "WelcomeScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management App";
             this.Load += new System.EventHandler(this.WelcomeScreen_Load);
             this.ResumeLayout(false);
