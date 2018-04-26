@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InventoryClasses
+namespace InventoryClasses.Entities
 {
-    public class Order // gets fulfilled by warehouse
+    public class BackOrder // gets fulfulled by the dist. center
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderID { get; set; }
@@ -16,10 +16,9 @@ namespace InventoryClasses
         public DateTime DateOrdered { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual Warehouse ShippedFrom { get; set; }
-        
-        public ICollection<OrderedItems> ItemsOrdered { get; set; }
+        public List<Order> ItemsOrdered { get; set; }
+
+
+
     }
-
-
-    
 }

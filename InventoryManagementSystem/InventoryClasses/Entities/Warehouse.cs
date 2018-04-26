@@ -15,7 +15,28 @@ namespace InventoryClasses
         public string Name { get; set; }
         public string Address { get; set; }
 
-        public Dictionary<ItemCategory, int> ItemsStored;
+        public IEnumerable<ItemStock> itemsStored;
+
+
+
+        public static void CreateTestWarehouses()
+        {
+            using (InvContext ctx = new InvContext())
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    var newWarehouse = new Warehouse()
+                    {
+                        Address = $"Addres {i}00 Wares St.",
+                        Name = "Warehouse " + i,
+                        WarehouseID = i,
+                    };
+
+                    ctx.Warehouses.Add(newWarehouse);
+
+                }
+            }
+        }
 
 
         private bool CreateBackOrder()

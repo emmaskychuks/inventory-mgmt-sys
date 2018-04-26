@@ -47,9 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\BackOrder.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\CustomerInvoice.cs" />
     <Compile Include="Entities\DistributionCenter.cs" />
+    <Compile Include="Entities\OrderedItems.cs" />
     <Compile Include="InvContext.cs" />
     <Compile Include="Entities\ItemCategory.cs" />
     <Compile Include="Entities\ItemStock.cs" />
@@ -58,6 +60,10 @@
     <Compile Include="Migrations\201804230039072_initialDatabase.cs" />
     <Compile Include="Migrations\201804230039072_initialDatabase.Designer.cs">
       <DependentUpon>201804230039072_initialDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804260311388_MappedEntities.cs" />
+    <Compile Include="Migrations\201804260311388_MappedEntities.Designer.cs">
+      <DependentUpon>201804260311388_MappedEntities.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -82,6 +88,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804230039072_initialDatabase.resx">
       <DependentUpon>201804230039072_initialDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804260311388_MappedEntities.resx">
+      <DependentUpon>201804260311388_MappedEntities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

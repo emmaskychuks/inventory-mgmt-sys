@@ -36,5 +36,12 @@ namespace InventoryClasses
         }
 
 
+        /*
+        // specifies which user object in the InvActvity to use as reference
+        [NotMapped, InverseProperty("User_Authorizer")] 
+        public ICollection<Inventory.InvActivity> InventoryActivityApprovals;
+        */
+
+
     }
 }

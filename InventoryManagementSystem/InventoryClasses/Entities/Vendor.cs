@@ -15,7 +15,7 @@ namespace InventoryClasses
         public string Name { get; set; }
 
 
-        public ItemCategory ItemProvided { get; set; }
+        public virtual ItemCategory ItemProvided { get; set; }
 
 
         public bool AddVendor()

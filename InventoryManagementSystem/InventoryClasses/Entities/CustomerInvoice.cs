@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InventoryClasses.Entities;
 
 namespace InventoryClasses
 {
@@ -12,13 +13,13 @@ namespace InventoryClasses
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CustomerInvoiceID { get; set; }
-        public Customer NewCustomer { get; set; }
+        public virtual Customer NewCustomer { get; set; }
         // if we change the order we dont want the items changing? or deletion
 
 
         // beter way to keep a permenant record or items from each?
-        public Order FulfilledOrder { get; set; }
-        public BackOrder UnfulfilledOrder { get; set; }
+        public virtual Order FulfilledOrder { get; set; }
+        public virtual BackOrder UnfulfilledOrder { get; set; }
 
 
         public decimal TotalPrice { get; set; }

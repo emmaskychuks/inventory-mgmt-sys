@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace InventoryClasses
 {
-    public class ItemStock
+    public class OrderedItems
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ItemStockID { get; set; }
+        public int OrderedItemsID { get; set; }
 
-        public virtual Warehouse Warehouse { get; set; }
+        public virtual Order order { get; set; }
         public int Quantity { get; set; }
         public virtual ItemCategory ItemStored { get; set; }
 
