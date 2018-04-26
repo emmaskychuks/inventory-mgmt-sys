@@ -76,9 +76,13 @@ namespace InventoryManagementSystem
             InvContext context = new InvContext();
             string nameOfVendorToAdd = VendorNameTextBox.Text;
             string nameOfItem = VendorItemComboBox.GetItemText(this.VendorItemComboBox.SelectedItem);
-            ItemCategory itemCategory = (ItemCategory)context.ItemCategories.Where(x => x.Name == nameOfItem); 
+            ItemCategory itemCategory = (ItemCategory)context.ItemCategories.Where(x => x.Name == nameOfItem);
 
-            Vendor vendor
+            Vendor vendor = new Vendor();
+            vendor.Name = nameOfVendorToAdd;
+            vendor.ItemProvided = itemCategory;
+            context.Vendors.Add(vendor);
+
         }
     }
 }

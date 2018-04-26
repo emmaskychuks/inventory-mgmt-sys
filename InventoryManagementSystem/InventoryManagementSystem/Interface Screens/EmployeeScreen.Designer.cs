@@ -81,7 +81,7 @@
             this.itemCategoriesTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.ItemCategoriesTableAdapter();
             this.warehousesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.warehousesTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.WarehousesTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Vendor = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.EmployeeTabControl.SuspendLayout();
             this.WarehouseTabPage.SuspendLayout();
@@ -433,7 +433,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Vendor);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.VendorItemComboBox);
             this.groupBox1.Controls.Add(this.VendorNameTextBox);
@@ -574,13 +574,13 @@
             // 
             this.warehousesTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox1
+            // Vendor
             // 
-            this.textBox1.Location = new System.Drawing.Point(501, 306);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 42);
-            this.textBox1.TabIndex = 8;
+            this.Vendor.Location = new System.Drawing.Point(501, 306);
+            this.Vendor.Multiline = true;
+            this.Vendor.Name = "Vendor";
+            this.Vendor.Size = new System.Drawing.Size(152, 42);
+            this.Vendor.TabIndex = 8;
             // 
             // label10
             // 
@@ -679,7 +679,7 @@
         private System.Windows.Forms.Button AddItemButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Vendor;
         private System.Windows.Forms.Label label10;
     }
 }
