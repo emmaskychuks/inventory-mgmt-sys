@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using InventoryClasses;
+using InventoryClasses.Entities;
 
 namespace InventoryClasses
 {
@@ -12,7 +13,6 @@ namespace InventoryClasses
     {
         public InvContext() : base(Statics.DBconnstr) // start up the default context to use the db conn str
         {
-            throw new NotImplementedException();
         }
 
         // Entity Framework Code First Migrations with an existing database
@@ -21,17 +21,15 @@ namespace InventoryClasses
         // Entity Framework Code First Migrations
         // https://msdn.microsoft.com/en-us/library/jj591621(v=vs.113).aspx
 
-
-        
+        public DbSet<BackOrder> BackOrders { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerInvoice> CustomerInvoice { get; set; }
         public DbSet<ItemCategory> ItemCategories { get; set; }
+        public DbSet<ItemStock> ItemStocks { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderedItems> OrderedItems { get; set; }
         public DbSet<PackingSlip> PackingSlips { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
-        // Done
-        public DbSet<Customer> Customers { get; set; }
-
-
     }
 }

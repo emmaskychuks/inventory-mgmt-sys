@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InventoryClasses
+namespace InventoryClasses.Entities
 {
     public class PackingSlip
     {

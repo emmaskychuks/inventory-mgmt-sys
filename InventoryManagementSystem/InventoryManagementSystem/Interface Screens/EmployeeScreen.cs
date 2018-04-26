@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InventoryClasses.Entities;
 
 namespace InventoryManagementSystem
 {
@@ -76,9 +77,9 @@ namespace InventoryManagementSystem
             InvContext context = new InvContext();
             string nameOfVendorToAdd = VendorNameTextBox.Text;
             string nameOfItem = VendorItemComboBox.GetItemText(this.VendorItemComboBox.SelectedItem);
-            ItemCategory itemCategory = (ItemCategory)context.ItemCategories.Where(x => x.Name == nameOfItem); 
+            ItemCategory itemCategory = (ItemCategory)context.ItemCategories.Where(x => x.Name == nameOfItem);
 
-            Vendor vendor
+            Vendor vendor;
         }
     }
 }

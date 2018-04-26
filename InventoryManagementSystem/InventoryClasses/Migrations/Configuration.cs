@@ -4,6 +4,7 @@ namespace InventoryClasses.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Entities;
 
     internal sealed class Configuration : DbMigrationsConfiguration<InventoryClasses.InvContext>
     {
@@ -95,6 +96,36 @@ namespace InventoryClasses.Migrations
                     MaxPerWarehouse = 10000,
                     Price = 8.70M,
                     RestockItemLimit = 250,
+                },
+                new ItemCategory()
+                {
+                    ItemCategoryID = 4,
+                    Name = "Push pins",
+                    Description = "There are even more",
+                    LocationInWarehouse = "Secion D",
+                    MaxPerWarehouse = 10000,
+                    Price = 0.02M,
+                    RestockItemLimit = 500,
+                },
+                new ItemCategory()
+                {
+                    ItemCategoryID = 5,
+                    Name = "AA Batteries",
+                    Description = "Energizers pride and joy",
+                    LocationInWarehouse = "Secion E",
+                    MaxPerWarehouse = 2000,
+                    Price = 1.05M,
+                    RestockItemLimit = 200,
+                },
+                new ItemCategory()
+                {
+                    ItemCategoryID = 6,
+                    Name = "AAA Batteries",
+                    Description = "Energizers lesser pride and joy",
+                    LocationInWarehouse = "Secion F",
+                    MaxPerWarehouse = 2000,
+                    Price = 0.98M,
+                    RestockItemLimit = 200,
                 }
 
             );
