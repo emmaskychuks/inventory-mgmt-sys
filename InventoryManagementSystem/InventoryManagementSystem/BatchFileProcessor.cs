@@ -138,8 +138,8 @@ namespace InventoryManagementSystem
                                     line = line.Remove(0, 5);
                                     orderedItems.Quantity = Convert.ToInt32(line.Substring(0, 5));
                                     orderedItems.OrderedItemsID = itemCategory.ItemCategoryID; //TODO: Needs review
-                                    orderedItems.ItemStored = itemCategory;
-                                    orderedItems.order = order;
+                                    //orderedItems.ItemStored = itemCategory;
+                                    ///.order = order;
                                     order.ItemsOrdered.Add(orderedItems);
                                     //Discount code not needed from file
                                     orderCounter++;
