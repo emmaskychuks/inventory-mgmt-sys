@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InventoryManagementSystem
+namespace InventoryManagementSystem.Interface_Screens
 {
     public partial class CustomerScreen : Form
     {
         public CustomerScreen()
         {
             InitializeComponent();
+        }
+
+        private void CustomerScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

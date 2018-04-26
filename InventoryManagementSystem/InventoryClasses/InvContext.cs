@@ -12,7 +12,7 @@ namespace InventoryClasses
     {
         public InvContext() : base(Statics.DBconnstr) // start up the default context to use the db conn str
         {
-
+            throw new NotImplementedException();
         }
 
         // Entity Framework Code First Migrations with an existing database

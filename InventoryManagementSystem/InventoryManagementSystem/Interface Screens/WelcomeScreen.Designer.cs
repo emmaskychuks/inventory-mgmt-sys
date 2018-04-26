@@ -28,22 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.CustomerButton = new System.Windows.Forms.Button();
+            this.EmployeeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // CustomerButton
+            // 
+            this.CustomerButton.Location = new System.Drawing.Point(171, 549);
+            this.CustomerButton.Name = "CustomerButton";
+            this.CustomerButton.Size = new System.Drawing.Size(245, 101);
+            this.CustomerButton.TabIndex = 0;
+            this.CustomerButton.Text = "Customer";
+            this.CustomerButton.UseVisualStyleBackColor = true;
+            this.CustomerButton.Click += new System.EventHandler(this.customerButton_Click);
+            // 
+            // EmployeeButton
+            // 
+            this.EmployeeButton.Location = new System.Drawing.Point(171, 312);
+            this.EmployeeButton.Name = "EmployeeButton";
+            this.EmployeeButton.Size = new System.Drawing.Size(245, 101);
+            this.EmployeeButton.TabIndex = 1;
+            this.EmployeeButton.Text = "Employee";
+            this.EmployeeButton.UseVisualStyleBackColor = true;
+            this.EmployeeButton.Click += new System.EventHandler(this.employeeButton_Click);
             // 
             // WelcomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 938);
+            this.ClientSize = new System.Drawing.Size(657, 777);
+            this.Controls.Add(this.EmployeeButton);
+            this.Controls.Add(this.CustomerButton);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "WelcomeScreen";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "Inventory Management App";
+            this.Load += new System.EventHandler(this.WelcomeScreen_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button CustomerButton;
+        private System.Windows.Forms.Button EmployeeButton;
     }
 }
 

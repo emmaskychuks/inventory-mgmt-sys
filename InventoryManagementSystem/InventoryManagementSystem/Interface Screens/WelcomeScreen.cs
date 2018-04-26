@@ -17,9 +17,19 @@ namespace InventoryManagementSystem
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void WelcomeScreen_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void customerButton_Click(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void employeeButton_Click(object sender, EventArgs e)
+        {
+            new EmployeeScreen().ShowDialog();
         }
     }
 }
