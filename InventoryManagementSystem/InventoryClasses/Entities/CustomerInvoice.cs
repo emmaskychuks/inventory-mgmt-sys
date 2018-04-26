@@ -12,7 +12,7 @@ namespace InventoryClasses
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CustomerInvoiceID { get; set; }
-
+        public Customer NewCustomer { get; set; }
         // if we change the order we dont want the items changing? or deletion
 
 
@@ -22,12 +22,8 @@ namespace InventoryClasses
 
 
         public decimal TotalPrice { get; set; }
-        public decimal SalesTax { get; set; }
+        public decimal SalesTax { get; set; }    //Assume 6% tax
         public decimal OrgPrice { get; set; }
-        
-
-
-
-
+       
     }
 }

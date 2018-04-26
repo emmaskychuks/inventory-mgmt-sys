@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace InventoryManagementSystem
 {
-    class FileParser
+    class BatchFileProcessor
     {
         public string fileLocation { get; set; }
         public string fileType { get; set; }
         public StreamReader streamReader;
         public int sequenceNumber { get; set; }
-        public FileParser(string fileLocation, string fileType)
+        public BatchFileProcessor(string fileLocation, string fileType)
         {
             this.fileLocation = fileLocation;
             this.fileType = fileType;
@@ -31,9 +31,6 @@ namespace InventoryManagementSystem
                         break;
                     case "CustomerOrder":
                         ParseCustomerOrderFile();
-                        break;
-                    case "VendorOrder":
-                        ParseVendorOrderFile();
                         break;
                     default:
                         break;
@@ -56,7 +53,8 @@ namespace InventoryManagementSystem
             ItemCategory itemCategory = new ItemCategory();
             Vendor vendor = new Vendor();
             ItemStock itemStock = new ItemStock(); 
-            bool newOrder = true;
+            bool vendorOrderExist = false;
+            int sequenceNumber = 0;
             int counter = 1;
             try
             {
@@ -65,23 +63,30 @@ namespace InventoryManagementSystem
                     string line;
                     while((line = streamReader.ReadLine()) != null)
                     {
-                        int sequenceNumber = Convert.ToInt32(line.Substring(3, 4));
-                        if (!newOrder && sequenceNumber == counter)
+                        if (vendorOrderExist && line.Substring(0, 1) != "T")
                         {
                             vendor.VendorID = Convert.ToInt32(line.Substring(0, 2));
                             itemCategory.ItemCategoryID = Convert.ToInt32(line.Substring(2, 5));
-                            itemCategory.vendor = vendor;
+                            itemCategory.Vendor = vendor.VendorID;
                             itemStock.Quantity = Convert.ToInt32(line.Substring(2, 6));
+                            //Validate Item
                             itemStock.ItemStored = itemCategory;
                             counter++;
+
+                            /***
+                             * Go to back order database and fufil all order.
+                             * Distribute remaining to all seven warehouses
+                             **/
                         }
-                        else if (newOrder && line.Substring(0, 2) == "HD")
+                        else if (!vendorOrderExist && line.Substring(0, 2) == "HD")
                         {
-                            newOrder = false;
+                            vendorOrderExist = true;
+                            sequenceNumber = Convert.ToInt32(line.Substring(3, 4));
                         }
                         else if (line.Substring(0, 1) == "T")
                         {
-                            newOrder = true;
+                            //Check total vendor items
+                            vendorOrderExist = false;
                         }
                         else
                             throw new Exception();               
@@ -93,11 +98,14 @@ namespace InventoryManagementSystem
                 Console.WriteLine("File not found in {0}", fileLocation);
             }
         }
-
+        /// <summary>
+        /// Reposnsible for parsing customer order from file
+        /// </summary>
         private void ParseCustomerOrderFile()
         {
             string line;
-            bool moreCustomerOrder = true;
+            int sequence = 0;
+            bool customerOrderExist = false;
             int counter = 0;
 
             ItemCategory itemCategory = new ItemCategory();
@@ -111,12 +119,13 @@ namespace InventoryManagementSystem
                 {
                     while ((line = streamReader.ReadLine()) != null)
                     {
-                        if (moreCustomerOrder && sequenceNumber == counter)
+                        if (customerOrderExist && sequenceNumber == counter)
                         {
-                            int sequenceNumber = Convert.ToInt32(line.Substring(3, 4));
                             switch(line[0])
                             {
                                 case 'C':
+                                    order = new Order();
+
                                     order.OrderNumber = line.Substring(1, 6);
                                     newCustomer.CustomerID = Convert.ToInt32(line.Substring(6, 5));
                                     newCustomer.Name = line.Substring(11, 30).Trim();
@@ -125,23 +134,34 @@ namespace InventoryManagementSystem
                                         line.Substring(81, 2).Trim() + " " + line.Substring(83, 9).Trim();
                                     break;
                                 case 'I':
+                                    itemCategory = new ItemCategory();
                                     itemCategory.ItemCategoryID = Convert.ToInt32(line.Substring(0, 5));
-                                    itemStock.Quantity = Convert.ToInt32(line.Substring(5, 5));
+                                    order.ItemsOrdered.Add(itemCategory, Convert.ToInt32(line.Substring(5, 5)));
+                                    counter++;
                                     break;
                                 case 'L':
-                                    
+                                    //Save Order
+                                    int numberOfOrderedItems = Convert.ToInt32(line.Substring(1, 3));
+                                    if (counter != numberOfOrderedItems)
+                                    {
+                                       //Missed an ordered item
+                                    }
+                                    counter = 0;
                                     break;
                                 case 'O':
-                                    moreCustomerOrder = false;
+                                    customerOrderExist = false;
+                                    //Can also be used to keep track of number of orders
                                     break;
                                 default:
                                     throw new InvalidDataException();
 
                             }
                         }
-                        else if (moreCustomerOrder && line.Substring(0, 2) == "HD")
+                        else if (!customerOrderExist && line.Substring(0, 2) == "HD")
                         {
+                            sequence = Convert.ToInt32(line.Substring(3, 4));
                             counter = 1;
+                            customerOrderExist = true;
                         }
                         else if (line.Substring(0, 1) == "T")
                         {
@@ -157,10 +177,6 @@ namespace InventoryManagementSystem
             {
                 Console.WriteLine("File not found in {0}", fileLocation);
             }
-        }
-        private void ParseVendorOrderFile()
-        {
-
         }
     }
 }

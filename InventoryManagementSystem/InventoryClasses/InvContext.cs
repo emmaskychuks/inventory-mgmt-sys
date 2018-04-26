@@ -29,13 +29,6 @@ namespace InventoryClasses
         public DbSet<PackingSlip> PackingSlips { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
-
-
-
-
-
-
-
         // Done
         public DbSet<Customer> Customers { get; set; }
 

@@ -58,7 +58,7 @@
     <Compile Include="Interface Screens\EmployeeScreen.Designer.cs">
       <DependentUpon>EmployeeScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="FileParser.cs" />
+    <Compile Include="BatchFileProcessor.cs" />
     <Compile Include="Interface Screens\WelcomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>

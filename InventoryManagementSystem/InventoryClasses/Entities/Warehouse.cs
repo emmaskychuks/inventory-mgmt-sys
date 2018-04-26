@@ -11,12 +11,9 @@ namespace InventoryClasses
     public class Warehouse
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int WarehouseID { get;set; }
-
+        public int WarehouseID { get;set; } 
         public string Name { get; set; }
         public string Address { get; set; }
-
-
 
         public Dictionary<ItemCategory, int> ItemsStored;
 
