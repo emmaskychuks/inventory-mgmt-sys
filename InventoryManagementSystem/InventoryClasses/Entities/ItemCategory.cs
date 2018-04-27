@@ -21,7 +21,7 @@ namespace InventoryClasses.Entities
         
         public string LocationInWarehouse { get; set; }
 
-        public void AddItem(string name, string description, string price, int distributionField)
+        public static void AddItem(string name, string description, string price, int distributionField)
         {
             using (InvContext context = new InvContext())
             {
@@ -33,7 +33,6 @@ namespace InventoryClasses.Entities
 
                 itemStock.ItemStored = itemCategory;
                 itemStock.Quantity = 0;
-                itemStock.DistributionField = distributionField;
                 context.SaveChanges();
             }
         }
