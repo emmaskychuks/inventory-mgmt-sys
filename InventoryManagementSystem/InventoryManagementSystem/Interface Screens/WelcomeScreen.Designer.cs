@@ -32,6 +32,8 @@
             this.CustomerButton = new System.Windows.Forms.Button();
             this.EmployeeButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ActiveHoursCheckBox = new System.Windows.Forms.CheckBox();
+            this.UnActiveHoursButton = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,11 +67,35 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // ActiveHoursCheckBox
+            // 
+            this.ActiveHoursCheckBox.AutoSize = true;
+            this.ActiveHoursCheckBox.Location = new System.Drawing.Point(571, 747);
+            this.ActiveHoursCheckBox.Name = "ActiveHoursCheckBox";
+            this.ActiveHoursCheckBox.Size = new System.Drawing.Size(166, 29);
+            this.ActiveHoursCheckBox.TabIndex = 3;
+            this.ActiveHoursCheckBox.Text = "Active Hours";
+            this.ActiveHoursCheckBox.UseVisualStyleBackColor = true;
+            this.ActiveHoursCheckBox.CheckedChanged += new System.EventHandler(this.ActiveHoursCheckBox_CheckedChanged);
+            // 
+            // UnActiveHoursButton
+            // 
+            this.UnActiveHoursButton.AutoSize = true;
+            this.UnActiveHoursButton.Location = new System.Drawing.Point(571, 819);
+            this.UnActiveHoursButton.Name = "UnActiveHoursButton";
+            this.UnActiveHoursButton.Size = new System.Drawing.Size(191, 29);
+            this.UnActiveHoursButton.TabIndex = 4;
+            this.UnActiveHoursButton.Text = "Unactive Hours";
+            this.UnActiveHoursButton.UseVisualStyleBackColor = true;
+            this.UnActiveHoursButton.CheckedChanged += new System.EventHandler(this.UnActiveHoursButton_CheckedChanged);
+            // 
             // WelcomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 870);
+            this.Controls.Add(this.UnActiveHoursButton);
+            this.Controls.Add(this.ActiveHoursCheckBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.EmployeeButton);
             this.Controls.Add(this.CustomerButton);
@@ -81,6 +107,7 @@
             this.Load += new System.EventHandler(this.WelcomeScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -89,6 +116,8 @@
         private System.Windows.Forms.Button CustomerButton;
         private System.Windows.Forms.Button EmployeeButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox ActiveHoursCheckBox;
+        private System.Windows.Forms.CheckBox UnActiveHoursButton;
     }
 }
 
