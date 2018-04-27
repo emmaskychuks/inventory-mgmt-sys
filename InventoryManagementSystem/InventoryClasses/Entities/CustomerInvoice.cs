@@ -16,10 +16,8 @@ namespace InventoryClasses.Entities
         public virtual Customer NewCustomer { get; set; }
         // if we change the order we dont want the items changing? or deletion
 
-
-        // beter way to keep a permenant record or items from each?
+        
         public virtual Order FulfilledOrder { get; set; }
-        public virtual BackOrder UnfulfilledOrder { get; set; }
 
 
         public decimal TotalPrice { get; set; }

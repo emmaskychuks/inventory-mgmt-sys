@@ -7,13 +7,13 @@ namespace InventoryClasses.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class ChangedOrderedItemsReference : IMigrationMetadata
+    public sealed partial class AddedRestraintsToOrderTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedOrderedItemsReference));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedRestraintsToOrderTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804262340480_ChangedOrderedItemsReference"; }
+            get { return "201804270309064_AddedRestraintsToOrderTable"; }
         }
         
         string IMigrationMetadata.Source

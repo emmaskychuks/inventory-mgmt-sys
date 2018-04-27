@@ -14,8 +14,7 @@ namespace InventoryClasses.Entities
         public int WarehouseID { get;set; } 
         public string Name { get; set; }
         public string Address { get; set; }
-
-        public IEnumerable<ItemStock> itemsStored;
+        public ICollection<ItemStock> itemsStored;
 
 
 

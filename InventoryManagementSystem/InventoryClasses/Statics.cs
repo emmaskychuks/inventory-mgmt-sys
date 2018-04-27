@@ -12,6 +12,17 @@ namespace InventoryClasses
         public static string DBconnstr =>
             "Data Source=aknierie.database.windows.net;Initial Catalog=CIS375_InventoryManagement;Persist Security Info=True;User ID=cis375;Password=futureengineerslikeblackpanther123!";
 
+        public static Random rand = new Random();
+
+        public static bool DebugMode = true;
+
+        public static void DebugOut(string message)
+        {
+            if (DebugMode)
+                Console.WriteLine(message);
+        }
+
+
         public static void sample()
         {
             using (InvContext context = new InvContext())

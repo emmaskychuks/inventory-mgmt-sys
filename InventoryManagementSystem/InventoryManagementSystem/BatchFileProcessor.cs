@@ -122,7 +122,7 @@ namespace InventoryManagementSystem
                                     sequenceNumber = 0;
                                     order = new Order();
                                 
-                                    order.OrderNumber = line.Substring(1, 6);
+                                    order.OrderCode = line.Substring(1, 6);
                                     line = line.Remove(0, 6);
                                     newCustomer.CustomerID = Convert.ToInt32(line.Substring(0, 5));
                                     line = line.Remove(0, 5);

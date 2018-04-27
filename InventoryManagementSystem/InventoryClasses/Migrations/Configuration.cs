@@ -14,6 +14,13 @@ namespace InventoryClasses.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
+        
+        /* 
+         * This is the religion of database nuking;
+         * Tired of all the migrations not working? Nuke the database and migrate anew;
+         *           EXEC sp_MSforeachtable @command1 = "DROP TABLE ?"
+         */
+
         protected override void Seed(InventoryClasses.InvContext context)
         {
             //  This method will be called after migrating to the latest version.
@@ -193,6 +200,22 @@ namespace InventoryClasses.Migrations
                 });
             }
             
+            // fill the inventories of each of the warehouse
+
+
+            int stockCount = 0;
+            foreach (Warehouse house in context.Warehouses.ToList())
+            foreach (ItemCategory item in context.ItemCategories.ToList())
+            {
+                stockCount++;
+                context.ItemStocks.AddOrUpdate(new ItemStock()
+                {
+                    ItemStockID = stockCount,
+                    ItemStored = item,
+                    Quantity = item.MaxPerWarehouse,
+                    Warehouse = house
+                });
+            }
 
 
 

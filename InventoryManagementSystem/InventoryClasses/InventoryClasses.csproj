@@ -57,21 +57,13 @@
     <Compile Include="Entities\ItemStock.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\PackingSlip.cs" />
-    <Compile Include="Migrations\201804230039072_initialDatabase.cs" />
-    <Compile Include="Migrations\201804230039072_initialDatabase.Designer.cs">
-      <DependentUpon>201804230039072_initialDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201804270158551_InitialDatabase2.cs" />
+    <Compile Include="Migrations\201804270158551_InitialDatabase2.Designer.cs">
+      <DependentUpon>201804270158551_InitialDatabase2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804260311388_MappedEntities.cs" />
-    <Compile Include="Migrations\201804260311388_MappedEntities.Designer.cs">
-      <DependentUpon>201804260311388_MappedEntities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804262159046_addedRemainingEntities.cs" />
-    <Compile Include="Migrations\201804262159046_addedRemainingEntities.Designer.cs">
-      <DependentUpon>201804262159046_addedRemainingEntities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804262340480_ChangedOrderedItemsReference.cs" />
-    <Compile Include="Migrations\201804262340480_ChangedOrderedItemsReference.Designer.cs">
-      <DependentUpon>201804262340480_ChangedOrderedItemsReference.cs</DependentUpon>
+    <Compile Include="Migrations\201804270309064_AddedRestraintsToOrderTable.cs" />
+    <Compile Include="Migrations\201804270309064_AddedRestraintsToOrderTable.Designer.cs">
+      <DependentUpon>201804270309064_AddedRestraintsToOrderTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -94,17 +86,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804230039072_initialDatabase.resx">
-      <DependentUpon>201804230039072_initialDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804270158551_InitialDatabase2.resx">
+      <DependentUpon>201804270158551_InitialDatabase2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804260311388_MappedEntities.resx">
-      <DependentUpon>201804260311388_MappedEntities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804262159046_addedRemainingEntities.resx">
-      <DependentUpon>201804262159046_addedRemainingEntities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804262340480_ChangedOrderedItemsReference.resx">
-      <DependentUpon>201804262340480_ChangedOrderedItemsReference.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804270309064_AddedRestraintsToOrderTable.resx">
+      <DependentUpon>201804270309064_AddedRestraintsToOrderTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
