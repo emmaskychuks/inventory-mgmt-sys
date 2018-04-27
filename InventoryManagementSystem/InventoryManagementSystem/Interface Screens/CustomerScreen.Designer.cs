@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.CustomerTabControl = new System.Windows.Forms.TabControl();
             this.ItemTabPage = new System.Windows.Forms.TabPage();
+            this.submit = new System.Windows.Forms.Button();
+            this.exit = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.itemCategoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cIS375_InventoryManagementDataSet = new InventoryManagementSystem.CIS375_InventoryManagementDataSet();
@@ -65,6 +67,7 @@
             this.cIS375_InventoryManagementDataSet1 = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1();
             this.ordersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ordersTableAdapter1 = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1TableAdapters.OrdersTableAdapter();
+            this.existOrderPage = new System.Windows.Forms.Button();
             this.CustomerTabControl.SuspendLayout();
             this.ItemTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemCategoriesBindingSource)).BeginInit();
@@ -90,6 +93,8 @@
             // 
             // ItemTabPage
             // 
+            this.ItemTabPage.Controls.Add(this.submit);
+            this.ItemTabPage.Controls.Add(this.exit);
             this.ItemTabPage.Controls.Add(this.comboBox2);
             this.ItemTabPage.Controls.Add(this.label3);
             this.ItemTabPage.Controls.Add(this.label2);
@@ -103,6 +108,26 @@
             this.ItemTabPage.TabIndex = 0;
             this.ItemTabPage.Text = "Item Page";
             this.ItemTabPage.UseVisualStyleBackColor = true;
+            // 
+            // submit
+            // 
+            this.submit.Location = new System.Drawing.Point(1854, 1031);
+            this.submit.Name = "submit";
+            this.submit.Size = new System.Drawing.Size(178, 65);
+            this.submit.TabIndex = 7;
+            this.submit.Text = "Submit";
+            this.submit.UseVisualStyleBackColor = true;
+            // 
+            // exit
+            // 
+            this.exit.AllowDrop = true;
+            this.exit.Location = new System.Drawing.Point(1854, 1123);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(178, 68);
+            this.exit.TabIndex = 6;
+            this.exit.Text = "Exit";
+            this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox2
             // 
@@ -158,6 +183,7 @@
             this.PlaceOrderButton.TabIndex = 1;
             this.PlaceOrderButton.Text = "Place Order";
             this.PlaceOrderButton.UseVisualStyleBackColor = true;
+            this.PlaceOrderButton.Click += new System.EventHandler(this.PlaceOrderButton_Click);
             // 
             // ItemGridView
             // 
@@ -244,6 +270,7 @@
             // 
             // OrderTabPage
             // 
+            this.OrderTabPage.Controls.Add(this.existOrderPage);
             this.OrderTabPage.Controls.Add(this.OrderSearchButton);
             this.OrderTabPage.Controls.Add(this.ReturnItemGroupBox);
             this.OrderTabPage.Controls.Add(this.CustomerNameTextBox);
@@ -399,6 +426,16 @@
             // 
             this.ordersTableAdapter1.ClearBeforeFill = true;
             // 
+            // existOrderPage
+            // 
+            this.existOrderPage.Location = new System.Drawing.Point(1720, 1259);
+            this.existOrderPage.Name = "existOrderPage";
+            this.existOrderPage.Size = new System.Drawing.Size(147, 44);
+            this.existOrderPage.TabIndex = 6;
+            this.existOrderPage.Text = "Exit";
+            this.existOrderPage.UseVisualStyleBackColor = true;
+            this.existOrderPage.Click += new System.EventHandler(this.existOrderPage_Click);
+            // 
             // CustomerScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -471,5 +508,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn restockItemLimitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maxPerWarehouseDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn locationInWarehouseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.Button submit;
+        private System.Windows.Forms.Button existOrderPage;
     }
 }

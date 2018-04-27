@@ -61,5 +61,10 @@ namespace InventoryManagementSystem
         {
             ItemCategory.AddItem(ItemName.Text, ItemDescription.Text, ItemPrice.Text, 0);
         }
+
+        private void exitEmployeeScreen_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
