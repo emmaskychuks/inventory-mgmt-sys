@@ -93,6 +93,8 @@
             this.warehousesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.warehousesTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.WarehousesTableAdapter();
             this.itemStocksTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1TableAdapters.ItemStocksTableAdapter();
+            this.exitEmployeeScreen = new System.Windows.Forms.Button();
+            this.exitVendorManagementPage = new System.Windows.Forms.Button();
             this.EmployeeTabControl.SuspendLayout();
             this.WarehouseTabPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -128,6 +130,7 @@
             // 
             // WarehouseTabPage
             // 
+            this.WarehouseTabPage.Controls.Add(this.exitEmployeeScreen);
             this.WarehouseTabPage.Controls.Add(this.groupBox4);
             this.WarehouseTabPage.Controls.Add(this.groupBox3);
             this.WarehouseTabPage.Controls.Add(this.WarehouseItemDataGridView);
@@ -385,6 +388,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.exitVendorManagementPage);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.textBox3);
@@ -682,6 +686,25 @@
             // 
             this.itemStocksTableAdapter.ClearBeforeFill = true;
             // 
+            // exitEmployeeScreen
+            // 
+            this.exitEmployeeScreen.Location = new System.Drawing.Point(1883, 1368);
+            this.exitEmployeeScreen.Name = "exitEmployeeScreen";
+            this.exitEmployeeScreen.Size = new System.Drawing.Size(156, 57);
+            this.exitEmployeeScreen.TabIndex = 19;
+            this.exitEmployeeScreen.Text = "Exit";
+            this.exitEmployeeScreen.UseVisualStyleBackColor = true;
+            this.exitEmployeeScreen.Click += new System.EventHandler(this.exitEmployeeScreen_Click);
+            // 
+            // exitVendorManagementPage
+            // 
+            this.exitVendorManagementPage.Location = new System.Drawing.Point(279, 485);
+            this.exitVendorManagementPage.Name = "exitVendorManagementPage";
+            this.exitVendorManagementPage.Size = new System.Drawing.Size(134, 46);
+            this.exitVendorManagementPage.TabIndex = 9;
+            this.exitVendorManagementPage.Text = "Exit";
+            this.exitVendorManagementPage.UseVisualStyleBackColor = true;
+            // 
             // EmployeeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -787,5 +810,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemStoredItemCategoryIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn warehouseWarehouseIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button exitEmployeeScreen;
+        private System.Windows.Forms.Button exitVendorManagementPage;
     }
 }

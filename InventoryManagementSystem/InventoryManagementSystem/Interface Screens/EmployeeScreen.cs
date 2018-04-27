@@ -64,5 +64,10 @@ namespace InventoryManagementSystem
             ItemCategory itemCategory = new ItemCategory();
             itemCategory.AddItem(ItemName.Text, ItemDescription.Text, ItemPrice.Text, 0);
         }
+
+        private void exitEmployeeScreen_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
