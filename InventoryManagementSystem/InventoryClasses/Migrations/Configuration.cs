@@ -5,6 +5,7 @@ namespace InventoryClasses.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
     using Entities;
+    using System.Collections.Generic;
 
     internal sealed class Configuration : DbMigrationsConfiguration<InventoryClasses.InvContext>
     {
@@ -126,20 +127,74 @@ namespace InventoryClasses.Migrations
                     MaxPerWarehouse = 2000,
                     Price = 0.98M,
                     RestockItemLimit = 200,
-                }
-
-            );
-
-
-            context.Vendors.AddOrUpdate(
-                new Vendor()
+                },
+                new ItemCategory()
                 {
-                    VendorID = 1,
-                    Name = "Vendor 1",
-                    ItemProvided = new ItemCategory()
+                    ItemCategoryID = 7,
+                    Name = "Paper pack",
+                    Description = "Stack on stacks",
+                    LocationInWarehouse = "Secion G",
+                    MaxPerWarehouse = 700,
+                    Price = 3.50M,
+                    RestockItemLimit = 500,
+                },
+                new ItemCategory()
+                {
+                    ItemCategoryID = 8,
+                    Name = "Sticky Notes",
+                    Description = "When you need notes to stick around",
+                    LocationInWarehouse = "Secion H",
+                    MaxPerWarehouse = 300,
+                    Price = 0.50M,
+                    RestockItemLimit = 100,
+                },
+                new ItemCategory()
+                {
+                    ItemCategoryID = 9,
+                    Name = "Eraser",
+                    Description = "For all those mistakes",
+                    LocationInWarehouse = "Secion I",
+                    MaxPerWarehouse = 100,
+                    Price = 0.98M,
+                    RestockItemLimit = 200,
+                },
+                new ItemCategory()
+                {
+                    ItemCategoryID = 10,
+                    Name = "90's Gel Pens",
+                    Description = "You know the kind.",
+                    LocationInWarehouse = "Secion J",
+                    MaxPerWarehouse = 100,
+                    Price = 0.98M,
+                    RestockItemLimit = 200,
                 }
 
             );
+
+            
+            foreach (ItemCategory item in context.ItemCategories.ToList())
+            {
+                Vendor vendor = new Vendor()
+                { 
+                    VendorID = item.ItemCategoryID,
+                    ItemProvided = item,
+                    Name = "Vendor for " + item.Name,
+                };
+                context.Vendors.AddOrUpdate(vendor);
+            }
+
+            for (int i = 1; i <= 7; i++)
+            {
+                context.Warehouses.AddOrUpdate(new Warehouse()
+                {
+                    WarehouseID = i,
+                    Address = i + "000 Wares Street",
+                    Name = "Warehouse " + i,
+                });
+            }
+            
+
+
 
 
 

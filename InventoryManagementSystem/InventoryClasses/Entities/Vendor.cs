@@ -13,8 +13,6 @@ namespace InventoryClasses.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int VendorID { get; set; }
         public string Name { get; set; }
-
-
         public virtual ItemCategory ItemProvided { get; set; }
 
 
