@@ -65,6 +65,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Vendor = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.VendorItemComboBox = new System.Windows.Forms.ComboBox();
             this.itemCategoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.VendorNameTextBox = new System.Windows.Forms.TextBox();
@@ -77,12 +79,20 @@
             this.vendorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemProvidedItemCategoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.itemStockIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemStoredItemCategoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.warehouseWarehouseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemStocksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cIS375InventoryManagementDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cIS375_InventoryManagementDataSet1 = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1();
             this.vendorsTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.VendorsTableAdapter();
             this.itemCategoriesTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.ItemCategoriesTableAdapter();
             this.warehousesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.warehousesTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.WarehousesTableAdapter();
-            this.Vendor = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.itemStocksTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1TableAdapters.ItemStocksTableAdapter();
             this.EmployeeTabControl.SuspendLayout();
             this.WarehouseTabPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -97,6 +107,11 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemCategoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VendorDataGridView)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemStocksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cIS375InventoryManagementDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cIS375_InventoryManagementDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.warehousesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +119,7 @@
             // 
             this.EmployeeTabControl.Controls.Add(this.WarehouseTabPage);
             this.EmployeeTabControl.Controls.Add(this.VendorTabPage);
+            this.EmployeeTabControl.Controls.Add(this.tabPage1);
             this.EmployeeTabControl.Location = new System.Drawing.Point(13, 13);
             this.EmployeeTabControl.Name = "EmployeeTabControl";
             this.EmployeeTabControl.SelectedIndex = 0;
@@ -136,7 +152,7 @@
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Location = new System.Drawing.Point(1661, 552);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(733, 810);
+            this.groupBox4.Size = new System.Drawing.Size(581, 810);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Add Item";
@@ -208,6 +224,7 @@
             this.AddItemButton.TabIndex = 12;
             this.AddItemButton.Text = "Add Item";
             this.AddItemButton.UseVisualStyleBackColor = true;
+            this.AddItemButton.Click += new System.EventHandler(this.AddItemButton_Click);
             // 
             // label6
             // 
@@ -225,20 +242,19 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(1661, 43);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(733, 477);
+            this.groupBox3.Size = new System.Drawing.Size(584, 477);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Discontinue Item";
             // 
             // DiscontinueItemButton
             // 
-            this.DiscontinueItemButton.Location = new System.Drawing.Point(253, 255);
+            this.DiscontinueItemButton.Location = new System.Drawing.Point(237, 258);
             this.DiscontinueItemButton.Name = "DiscontinueItemButton";
-            this.DiscontinueItemButton.Size = new System.Drawing.Size(138, 45);
+            this.DiscontinueItemButton.Size = new System.Drawing.Size(185, 45);
             this.DiscontinueItemButton.TabIndex = 12;
             this.DiscontinueItemButton.Text = "Discontinue";
             this.DiscontinueItemButton.UseVisualStyleBackColor = true;
-            this.DiscontinueItemButton.Click += new System.EventHandler(this.button4_Click);
             // 
             // WarehouseItemComboBox
             // 
@@ -247,7 +263,7 @@
             this.WarehouseItemComboBox.FormattingEnabled = true;
             this.WarehouseItemComboBox.Location = new System.Drawing.Point(222, 108);
             this.WarehouseItemComboBox.Name = "WarehouseItemComboBox";
-            this.WarehouseItemComboBox.Size = new System.Drawing.Size(200, 33);
+            this.WarehouseItemComboBox.Size = new System.Drawing.Size(300, 33);
             this.WarehouseItemComboBox.TabIndex = 15;
             this.WarehouseItemComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -376,7 +392,7 @@
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Location = new System.Drawing.Point(1343, 805);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(770, 572);
+            this.groupBox2.Size = new System.Drawing.Size(848, 572);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Place Vendor Order";
@@ -444,19 +460,36 @@
             this.groupBox1.Controls.Add(this.DeleteVendorButton);
             this.groupBox1.Location = new System.Drawing.Point(1343, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(770, 706);
+            this.groupBox1.Size = new System.Drawing.Size(848, 706);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vendor Management";
+            // 
+            // Vendor
+            // 
+            this.Vendor.Location = new System.Drawing.Point(501, 306);
+            this.Vendor.Multiline = true;
+            this.Vendor.Name = "Vendor";
+            this.Vendor.Size = new System.Drawing.Size(152, 42);
+            this.Vendor.TabIndex = 8;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(525, 238);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(101, 25);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "VendorID";
             // 
             // VendorItemComboBox
             // 
             this.VendorItemComboBox.DataSource = this.itemCategoriesBindingSource;
             this.VendorItemComboBox.DisplayMember = "Name";
             this.VendorItemComboBox.FormattingEnabled = true;
-            this.VendorItemComboBox.Location = new System.Drawing.Point(504, 412);
+            this.VendorItemComboBox.Location = new System.Drawing.Point(433, 411);
             this.VendorItemComboBox.Name = "VendorItemComboBox";
-            this.VendorItemComboBox.Size = new System.Drawing.Size(150, 33);
+            this.VendorItemComboBox.Size = new System.Drawing.Size(300, 33);
             this.VendorItemComboBox.TabIndex = 6;
             // 
             // itemCategoriesBindingSource
@@ -532,7 +565,6 @@
             this.VendorDataGridView.RowTemplate.Height = 33;
             this.VendorDataGridView.Size = new System.Drawing.Size(1294, 1304);
             this.VendorDataGridView.TabIndex = 0;
-            this.VendorDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VendorDataGridView_CellContentClick);
             // 
             // vendorIDDataGridViewTextBoxColumn
             // 
@@ -557,6 +589,78 @@
             this.itemProvidedItemCategoryIDDataGridViewTextBoxColumn.Name = "itemProvidedItemCategoryIDDataGridViewTextBoxColumn";
             this.itemProvidedItemCategoryIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Location = new System.Drawing.Point(8, 39);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(2248, 1446);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Item Stock";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.itemStockIDDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.itemStoredItemCategoryIDDataGridViewTextBoxColumn,
+            this.warehouseWarehouseIDDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.itemStocksBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(9, 34);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(1310, 1401);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // itemStockIDDataGridViewTextBoxColumn
+            // 
+            this.itemStockIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.itemStockIDDataGridViewTextBoxColumn.DataPropertyName = "ItemStockID";
+            this.itemStockIDDataGridViewTextBoxColumn.HeaderText = "ItemStockID";
+            this.itemStockIDDataGridViewTextBoxColumn.Name = "itemStockIDDataGridViewTextBoxColumn";
+            this.itemStockIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.itemStockIDDataGridViewTextBoxColumn.Width = 171;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // itemStoredItemCategoryIDDataGridViewTextBoxColumn
+            // 
+            this.itemStoredItemCategoryIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.itemStoredItemCategoryIDDataGridViewTextBoxColumn.DataPropertyName = "ItemStored_ItemCategoryID";
+            this.itemStoredItemCategoryIDDataGridViewTextBoxColumn.HeaderText = "ItemStored_ItemCategoryID";
+            this.itemStoredItemCategoryIDDataGridViewTextBoxColumn.Name = "itemStoredItemCategoryIDDataGridViewTextBoxColumn";
+            // 
+            // warehouseWarehouseIDDataGridViewTextBoxColumn
+            // 
+            this.warehouseWarehouseIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.warehouseWarehouseIDDataGridViewTextBoxColumn.DataPropertyName = "Warehouse_WarehouseID";
+            this.warehouseWarehouseIDDataGridViewTextBoxColumn.HeaderText = "Warehouse_WarehouseID";
+            this.warehouseWarehouseIDDataGridViewTextBoxColumn.Name = "warehouseWarehouseIDDataGridViewTextBoxColumn";
+            // 
+            // itemStocksBindingSource
+            // 
+            this.itemStocksBindingSource.DataMember = "ItemStocks";
+            this.itemStocksBindingSource.DataSource = this.cIS375InventoryManagementDataSet1BindingSource;
+            // 
+            // cIS375InventoryManagementDataSet1BindingSource
+            // 
+            this.cIS375InventoryManagementDataSet1BindingSource.DataSource = this.cIS375_InventoryManagementDataSet1;
+            this.cIS375InventoryManagementDataSet1BindingSource.Position = 0;
+            // 
+            // cIS375_InventoryManagementDataSet1
+            // 
+            this.cIS375_InventoryManagementDataSet1.DataSetName = "CIS375_InventoryManagementDataSet1";
+            this.cIS375_InventoryManagementDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // vendorsTableAdapter
             // 
             this.vendorsTableAdapter.ClearBeforeFill = true;
@@ -574,22 +678,9 @@
             // 
             this.warehousesTableAdapter.ClearBeforeFill = true;
             // 
-            // Vendor
+            // itemStocksTableAdapter
             // 
-            this.Vendor.Location = new System.Drawing.Point(501, 306);
-            this.Vendor.Multiline = true;
-            this.Vendor.Name = "Vendor";
-            this.Vendor.Size = new System.Drawing.Size(152, 42);
-            this.Vendor.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(525, 238);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 25);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "VendorID";
+            this.itemStocksTableAdapter.ClearBeforeFill = true;
             // 
             // EmployeeScreen
             // 
@@ -620,6 +711,11 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemCategoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VendorDataGridView)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemStocksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cIS375InventoryManagementDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cIS375_InventoryManagementDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.warehousesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -681,5 +777,15 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox Vendor;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource cIS375InventoryManagementDataSet1BindingSource;
+        private CIS375_InventoryManagementDataSet1 cIS375_InventoryManagementDataSet1;
+        private System.Windows.Forms.BindingSource itemStocksBindingSource;
+        private CIS375_InventoryManagementDataSet1TableAdapters.ItemStocksTableAdapter itemStocksTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemStockIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemStoredItemCategoryIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn warehouseWarehouseIDDataGridViewTextBoxColumn;
     }
 }

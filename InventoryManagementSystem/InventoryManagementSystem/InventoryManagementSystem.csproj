@@ -32,7 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -51,6 +56,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CIS375_InventoryManagementDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CIS375_InventoryManagementDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CIS375_InventoryManagementDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Interface Screens\EmployeeScreen.cs">
       <SubType>Form</SubType>
@@ -102,6 +112,18 @@
     <None Include="CIS375_InventoryManagementDataSet.xss">
       <DependentUpon>CIS375_InventoryManagementDataSet.xsd</DependentUpon>
     </None>
+    <None Include="CIS375_InventoryManagementDataSet1.xsc">
+      <DependentUpon>CIS375_InventoryManagementDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CIS375_InventoryManagementDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CIS375_InventoryManagementDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CIS375_InventoryManagementDataSet1.xss">
+      <DependentUpon>CIS375_InventoryManagementDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
