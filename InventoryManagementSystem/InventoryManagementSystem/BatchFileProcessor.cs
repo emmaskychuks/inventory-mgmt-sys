@@ -48,6 +48,8 @@ namespace InventoryManagementSystem
             bool vendorOrderExist = false;
             int sequenceNumber = 0;
             int counter = 1;
+            int itemCategoryID;
+            int vendorID;
             try
             {
                 using (StreamReader streamReader = new StreamReader(fileLocation))
@@ -57,9 +59,9 @@ namespace InventoryManagementSystem
                     {
                         if (vendorOrderExist && line.Substring(0, 1) != "T")
                         {
-                            vendor.VendorID = Convert.ToInt32(line.Substring(0, 2));
+                            vendorID = Convert.ToInt32(line.Substring(0, 2));
                             line = line.Remove(0, 2);
-                            itemCategory.ItemCategoryID = Convert.ToInt32(line.Substring(0, 5));
+                            itemCategoryID = Convert.ToInt32(line.Substring(0, 5));
                             vendor.ItemProvided = itemCategory;
                             itemStock.Quantity = Convert.ToInt32(line.Substring(2, 6));
                             //Validate Item
