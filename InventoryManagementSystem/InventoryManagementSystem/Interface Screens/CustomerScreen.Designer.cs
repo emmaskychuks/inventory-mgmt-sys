@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerScreen));
             this.CustomerTabControl = new System.Windows.Forms.TabControl();
             this.ItemTabPage = new System.Windows.Forms.TabPage();
             this.submit = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@
             this.maxPerWarehouseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.locationInWarehouseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderTabPage = new System.Windows.Forms.TabPage();
+            this.existOrderPage = new System.Windows.Forms.Button();
             this.OrderSearchButton = new System.Windows.Forms.Button();
             this.ReturnItemGroupBox = new System.Windows.Forms.GroupBox();
             this.ItemReturnQuantityTextBox = new System.Windows.Forms.TextBox();
@@ -67,7 +69,6 @@
             this.cIS375_InventoryManagementDataSet1 = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1();
             this.ordersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ordersTableAdapter1 = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1TableAdapters.OrdersTableAdapter();
-            this.existOrderPage = new System.Windows.Forms.Button();
             this.CustomerTabControl.SuspendLayout();
             this.ItemTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemCategoriesBindingSource)).BeginInit();
@@ -284,6 +285,16 @@
             this.OrderTabPage.Text = "Order Page";
             this.OrderTabPage.UseVisualStyleBackColor = true;
             // 
+            // existOrderPage
+            // 
+            this.existOrderPage.Location = new System.Drawing.Point(1720, 1259);
+            this.existOrderPage.Name = "existOrderPage";
+            this.existOrderPage.Size = new System.Drawing.Size(147, 44);
+            this.existOrderPage.TabIndex = 6;
+            this.existOrderPage.Text = "Exit";
+            this.existOrderPage.UseVisualStyleBackColor = true;
+            this.existOrderPage.Click += new System.EventHandler(this.existOrderPage_Click);
+            // 
             // OrderSearchButton
             // 
             this.OrderSearchButton.Location = new System.Drawing.Point(1720, 403);
@@ -362,6 +373,8 @@
             // 
             // OrderGridView
             // 
+            this.OrderGridView.AllowUserToAddRows = false;
+            this.OrderGridView.AllowUserToDeleteRows = false;
             this.OrderGridView.AllowUserToOrderColumns = true;
             this.OrderGridView.AutoGenerateColumns = false;
             this.OrderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -372,6 +385,7 @@
             this.OrderGridView.DataSource = this.ordersBindingSource;
             this.OrderGridView.Location = new System.Drawing.Point(6, 67);
             this.OrderGridView.Name = "OrderGridView";
+            this.OrderGridView.ReadOnly = true;
             this.OrderGridView.RowTemplate.Height = 33;
             this.OrderGridView.Size = new System.Drawing.Size(1335, 1158);
             this.OrderGridView.TabIndex = 1;
@@ -390,6 +404,7 @@
             this.dateOrderedDataGridViewTextBoxColumn.DataPropertyName = "DateOrdered";
             this.dateOrderedDataGridViewTextBoxColumn.HeaderText = "DateOrdered";
             this.dateOrderedDataGridViewTextBoxColumn.Name = "dateOrderedDataGridViewTextBoxColumn";
+            this.dateOrderedDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // customerCustomerIDDataGridViewTextBoxColumn
             // 
@@ -397,6 +412,7 @@
             this.customerCustomerIDDataGridViewTextBoxColumn.DataPropertyName = "Customer_CustomerID";
             this.customerCustomerIDDataGridViewTextBoxColumn.HeaderText = "Customer_CustomerID";
             this.customerCustomerIDDataGridViewTextBoxColumn.Name = "customerCustomerIDDataGridViewTextBoxColumn";
+            this.customerCustomerIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.customerCustomerIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // ordersBindingSource
@@ -426,16 +442,6 @@
             // 
             this.ordersTableAdapter1.ClearBeforeFill = true;
             // 
-            // existOrderPage
-            // 
-            this.existOrderPage.Location = new System.Drawing.Point(1720, 1259);
-            this.existOrderPage.Name = "existOrderPage";
-            this.existOrderPage.Size = new System.Drawing.Size(147, 44);
-            this.existOrderPage.TabIndex = 6;
-            this.existOrderPage.Text = "Exit";
-            this.existOrderPage.UseVisualStyleBackColor = true;
-            this.existOrderPage.Click += new System.EventHandler(this.existOrderPage_Click);
-            // 
             // CustomerScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -444,6 +450,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(2251, 1405);
             this.Controls.Add(this.CustomerTabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "CustomerScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;

@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeScreen));
             this.EmployeeTabControl = new System.Windows.Forms.TabControl();
             this.WarehouseTabPage = new System.Windows.Forms.TabPage();
+            this.exitEmployeeScreen = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.ItemDescription = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,6 +60,7 @@
             this.itemCategoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.VendorTabPage = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.exitVendorManagementPage = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.vendorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -93,8 +96,6 @@
             this.warehousesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.warehousesTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.WarehousesTableAdapter();
             this.itemStocksTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1TableAdapters.ItemStocksTableAdapter();
-            this.exitEmployeeScreen = new System.Windows.Forms.Button();
-            this.exitVendorManagementPage = new System.Windows.Forms.Button();
             this.EmployeeTabControl.SuspendLayout();
             this.WarehouseTabPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -141,6 +142,16 @@
             this.WarehouseTabPage.TabIndex = 0;
             this.WarehouseTabPage.Text = "Warehouse Inventory Page";
             this.WarehouseTabPage.UseVisualStyleBackColor = true;
+            // 
+            // exitEmployeeScreen
+            // 
+            this.exitEmployeeScreen.Location = new System.Drawing.Point(1883, 1368);
+            this.exitEmployeeScreen.Name = "exitEmployeeScreen";
+            this.exitEmployeeScreen.Size = new System.Drawing.Size(156, 57);
+            this.exitEmployeeScreen.TabIndex = 19;
+            this.exitEmployeeScreen.Text = "Exit";
+            this.exitEmployeeScreen.UseVisualStyleBackColor = true;
+            this.exitEmployeeScreen.Click += new System.EventHandler(this.exitEmployeeScreen_Click);
             // 
             // groupBox4
             // 
@@ -400,6 +411,15 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Place Vendor Order";
+            // 
+            // exitVendorManagementPage
+            // 
+            this.exitVendorManagementPage.Location = new System.Drawing.Point(279, 485);
+            this.exitVendorManagementPage.Name = "exitVendorManagementPage";
+            this.exitVendorManagementPage.Size = new System.Drawing.Size(134, 46);
+            this.exitVendorManagementPage.TabIndex = 9;
+            this.exitVendorManagementPage.Text = "Exit";
+            this.exitVendorManagementPage.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -686,25 +706,6 @@
             // 
             this.itemStocksTableAdapter.ClearBeforeFill = true;
             // 
-            // exitEmployeeScreen
-            // 
-            this.exitEmployeeScreen.Location = new System.Drawing.Point(1883, 1368);
-            this.exitEmployeeScreen.Name = "exitEmployeeScreen";
-            this.exitEmployeeScreen.Size = new System.Drawing.Size(156, 57);
-            this.exitEmployeeScreen.TabIndex = 19;
-            this.exitEmployeeScreen.Text = "Exit";
-            this.exitEmployeeScreen.UseVisualStyleBackColor = true;
-            this.exitEmployeeScreen.Click += new System.EventHandler(this.exitEmployeeScreen_Click);
-            // 
-            // exitVendorManagementPage
-            // 
-            this.exitVendorManagementPage.Location = new System.Drawing.Point(279, 485);
-            this.exitVendorManagementPage.Name = "exitVendorManagementPage";
-            this.exitVendorManagementPage.Size = new System.Drawing.Size(134, 46);
-            this.exitVendorManagementPage.TabIndex = 9;
-            this.exitVendorManagementPage.Text = "Exit";
-            this.exitVendorManagementPage.UseVisualStyleBackColor = true;
-            // 
             // EmployeeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -713,6 +714,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(2287, 1518);
             this.Controls.Add(this.EmployeeTabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeeScreen";
             this.Text = "Employee Screen";
             this.Load += new System.EventHandler(this.EmployeeScreen_Load);
