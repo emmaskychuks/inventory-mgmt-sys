@@ -16,7 +16,7 @@ namespace InventoryClasses.Entities
         public virtual ItemCategory ItemProvided { get; set; }
 
 
-        public bool AddVendor(string nameOfVendorToAdd, string nameOfItem)
+        public static bool AddVendor(string nameOfVendorToAdd, string nameOfItem)
         {
             using (InvContext context = new InvContext())
             {
@@ -39,7 +39,7 @@ namespace InventoryClasses.Entities
                 }
             }
         }
-        public int DeleteVendor(int vendorID)
+        public static int DeleteVendor(int vendorID)
         {
             using (InvContext context = new InvContext())
             {
