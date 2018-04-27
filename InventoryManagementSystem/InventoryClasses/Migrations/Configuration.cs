@@ -78,7 +78,7 @@ namespace InventoryClasses.Migrations
                 new ItemCategory()
                 {
                     ItemCategoryID = 1,
-                    Name = "Paperclips",
+                    Name = "Paperclip",
                     Description = "Little metal clippy things that holds things together",
                     LocationInWarehouse = "Secion A",
                     MaxPerWarehouse = 10000,
@@ -98,7 +98,7 @@ namespace InventoryClasses.Migrations
                 new ItemCategory()
                 {
                     ItemCategoryID = 3,
-                    Name = "Staples",
+                    Name = "Staple",
                     Description = "There are many",
                     LocationInWarehouse = "Secion C",
                     MaxPerWarehouse = 10000,
@@ -108,7 +108,7 @@ namespace InventoryClasses.Migrations
                 new ItemCategory()
                 {
                     ItemCategoryID = 4,
-                    Name = "Push pins",
+                    Name = "Push pin",
                     Description = "There are even more",
                     LocationInWarehouse = "Secion D",
                     MaxPerWarehouse = 10000,
@@ -118,7 +118,7 @@ namespace InventoryClasses.Migrations
                 new ItemCategory()
                 {
                     ItemCategoryID = 5,
-                    Name = "AA Batteries",
+                    Name = "AA Battery",
                     Description = "Energizers pride and joy",
                     LocationInWarehouse = "Secion E",
                     MaxPerWarehouse = 2000,
@@ -128,7 +128,7 @@ namespace InventoryClasses.Migrations
                 new ItemCategory()
                 {
                     ItemCategoryID = 6,
-                    Name = "AAA Batteries",
+                    Name = "AAA Battery",
                     Description = "Energizers lesser pride and joy",
                     LocationInWarehouse = "Secion F",
                     MaxPerWarehouse = 2000,
@@ -148,7 +148,7 @@ namespace InventoryClasses.Migrations
                 new ItemCategory()
                 {
                     ItemCategoryID = 8,
-                    Name = "Sticky Notes",
+                    Name = "Sticky Note",
                     Description = "When you need notes to stick around",
                     LocationInWarehouse = "Secion H",
                     MaxPerWarehouse = 300,
@@ -168,7 +168,7 @@ namespace InventoryClasses.Migrations
                 new ItemCategory()
                 {
                     ItemCategoryID = 10,
-                    Name = "90's Gel Pens",
+                    Name = "90's Gel Pen",
                     Description = "You know the kind.",
                     LocationInWarehouse = "Secion J",
                     MaxPerWarehouse = 100,

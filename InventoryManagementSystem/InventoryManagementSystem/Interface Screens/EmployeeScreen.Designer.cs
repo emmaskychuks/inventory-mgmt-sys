@@ -123,10 +123,11 @@
             this.EmployeeTabControl.Controls.Add(this.WarehouseTabPage);
             this.EmployeeTabControl.Controls.Add(this.VendorTabPage);
             this.EmployeeTabControl.Controls.Add(this.tabPage1);
-            this.EmployeeTabControl.Location = new System.Drawing.Point(13, 13);
+            this.EmployeeTabControl.Location = new System.Drawing.Point(9, 8);
+            this.EmployeeTabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EmployeeTabControl.Name = "EmployeeTabControl";
             this.EmployeeTabControl.SelectedIndex = 0;
-            this.EmployeeTabControl.Size = new System.Drawing.Size(2264, 1493);
+            this.EmployeeTabControl.Size = new System.Drawing.Size(1509, 956);
             this.EmployeeTabControl.TabIndex = 0;
             // 
             // WarehouseTabPage
@@ -135,19 +136,21 @@
             this.WarehouseTabPage.Controls.Add(this.groupBox4);
             this.WarehouseTabPage.Controls.Add(this.groupBox3);
             this.WarehouseTabPage.Controls.Add(this.WarehouseItemDataGridView);
-            this.WarehouseTabPage.Location = new System.Drawing.Point(8, 39);
+            this.WarehouseTabPage.Location = new System.Drawing.Point(4, 25);
+            this.WarehouseTabPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WarehouseTabPage.Name = "WarehouseTabPage";
-            this.WarehouseTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.WarehouseTabPage.Size = new System.Drawing.Size(2248, 1446);
+            this.WarehouseTabPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WarehouseTabPage.Size = new System.Drawing.Size(1501, 927);
             this.WarehouseTabPage.TabIndex = 0;
             this.WarehouseTabPage.Text = "Warehouse Inventory Page";
             this.WarehouseTabPage.UseVisualStyleBackColor = true;
             // 
             // exitEmployeeScreen
             // 
-            this.exitEmployeeScreen.Location = new System.Drawing.Point(1883, 1368);
+            this.exitEmployeeScreen.Location = new System.Drawing.Point(1255, 876);
+            this.exitEmployeeScreen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exitEmployeeScreen.Name = "exitEmployeeScreen";
-            this.exitEmployeeScreen.Size = new System.Drawing.Size(156, 57);
+            this.exitEmployeeScreen.Size = new System.Drawing.Size(104, 36);
             this.exitEmployeeScreen.TabIndex = 19;
             this.exitEmployeeScreen.Text = "Exit";
             this.exitEmployeeScreen.UseVisualStyleBackColor = true;
@@ -164,77 +167,87 @@
             this.groupBox4.Controls.Add(this.ItemID);
             this.groupBox4.Controls.Add(this.AddItemButton);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Location = new System.Drawing.Point(1661, 552);
+            this.groupBox4.Location = new System.Drawing.Point(1107, 353);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(581, 810);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Size = new System.Drawing.Size(387, 518);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Add Item";
             // 
             // ItemDescription
             // 
-            this.ItemDescription.Location = new System.Drawing.Point(274, 406);
+            this.ItemDescription.Location = new System.Drawing.Point(183, 260);
+            this.ItemDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ItemDescription.Multiline = true;
             this.ItemDescription.Name = "ItemDescription";
-            this.ItemDescription.Size = new System.Drawing.Size(262, 118);
+            this.ItemDescription.Size = new System.Drawing.Size(176, 77);
             this.ItemDescription.TabIndex = 23;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(73, 409);
+            this.label9.Location = new System.Drawing.Point(49, 262);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(166, 25);
+            this.label9.Size = new System.Drawing.Size(109, 17);
             this.label9.TabIndex = 22;
             this.label9.Text = "Item Description";
             // 
             // ItemName
             // 
-            this.ItemName.Location = new System.Drawing.Point(274, 190);
+            this.ItemName.Location = new System.Drawing.Point(183, 122);
+            this.ItemName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ItemName.Multiline = true;
             this.ItemName.Name = "ItemName";
-            this.ItemName.Size = new System.Drawing.Size(220, 56);
+            this.ItemName.Size = new System.Drawing.Size(148, 37);
             this.ItemName.TabIndex = 21;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(73, 193);
+            this.label8.Location = new System.Drawing.Point(49, 124);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 25);
+            this.label8.Size = new System.Drawing.Size(75, 17);
             this.label8.TabIndex = 20;
             this.label8.Text = "Item Name";
             // 
             // ItemPrice
             // 
-            this.ItemPrice.Location = new System.Drawing.Point(274, 287);
+            this.ItemPrice.Location = new System.Drawing.Point(183, 184);
+            this.ItemPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ItemPrice.Multiline = true;
             this.ItemPrice.Name = "ItemPrice";
-            this.ItemPrice.Size = new System.Drawing.Size(177, 56);
+            this.ItemPrice.Size = new System.Drawing.Size(119, 37);
             this.ItemPrice.TabIndex = 19;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(73, 290);
+            this.label7.Location = new System.Drawing.Point(49, 186);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 25);
+            this.label7.Size = new System.Drawing.Size(70, 17);
             this.label7.TabIndex = 18;
             this.label7.Text = "Item Price";
             // 
             // ItemID
             // 
-            this.ItemID.Location = new System.Drawing.Point(274, 102);
+            this.ItemID.Location = new System.Drawing.Point(183, 65);
+            this.ItemID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ItemID.Multiline = true;
             this.ItemID.Name = "ItemID";
-            this.ItemID.Size = new System.Drawing.Size(177, 56);
+            this.ItemID.Size = new System.Drawing.Size(119, 37);
             this.ItemID.TabIndex = 17;
             // 
             // AddItemButton
             // 
-            this.AddItemButton.Location = new System.Drawing.Point(222, 604);
+            this.AddItemButton.Location = new System.Drawing.Point(148, 387);
+            this.AddItemButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddItemButton.Name = "AddItemButton";
-            this.AddItemButton.Size = new System.Drawing.Size(138, 45);
+            this.AddItemButton.Size = new System.Drawing.Size(92, 29);
             this.AddItemButton.TabIndex = 12;
             this.AddItemButton.Text = "Add Item";
             this.AddItemButton.UseVisualStyleBackColor = true;
@@ -243,9 +256,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(74, 105);
+            this.label6.Location = new System.Drawing.Point(49, 67);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 25);
+            this.label6.Size = new System.Drawing.Size(51, 17);
             this.label6.TabIndex = 16;
             this.label6.Text = "Item ID";
             // 
@@ -254,18 +268,21 @@
             this.groupBox3.Controls.Add(this.DiscontinueItemButton);
             this.groupBox3.Controls.Add(this.WarehouseItemComboBox);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(1661, 43);
+            this.groupBox3.Location = new System.Drawing.Point(1107, 28);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(584, 477);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(389, 305);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Discontinue Item";
             // 
             // DiscontinueItemButton
             // 
-            this.DiscontinueItemButton.Location = new System.Drawing.Point(237, 258);
+            this.DiscontinueItemButton.Location = new System.Drawing.Point(158, 165);
+            this.DiscontinueItemButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DiscontinueItemButton.Name = "DiscontinueItemButton";
-            this.DiscontinueItemButton.Size = new System.Drawing.Size(185, 45);
+            this.DiscontinueItemButton.Size = new System.Drawing.Size(123, 29);
             this.DiscontinueItemButton.TabIndex = 12;
             this.DiscontinueItemButton.Text = "Discontinue";
             this.DiscontinueItemButton.UseVisualStyleBackColor = true;
@@ -276,9 +293,10 @@
             this.WarehouseItemComboBox.DataSource = this.itemCategoriesBindingSource2;
             this.WarehouseItemComboBox.DisplayMember = "Name";
             this.WarehouseItemComboBox.FormattingEnabled = true;
-            this.WarehouseItemComboBox.Location = new System.Drawing.Point(222, 108);
+            this.WarehouseItemComboBox.Location = new System.Drawing.Point(148, 69);
+            this.WarehouseItemComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WarehouseItemComboBox.Name = "WarehouseItemComboBox";
-            this.WarehouseItemComboBox.Size = new System.Drawing.Size(300, 33);
+            this.WarehouseItemComboBox.Size = new System.Drawing.Size(201, 24);
             this.WarehouseItemComboBox.TabIndex = 15;
             this.WarehouseItemComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -295,9 +313,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 108);
+            this.label5.Location = new System.Drawing.Point(17, 69);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 25);
+            this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 16;
             this.label5.Text = "Item List";
             // 
@@ -316,11 +335,12 @@
             this.maxPerWarehouseDataGridViewTextBoxColumn,
             this.locationInWarehouseDataGridViewTextBoxColumn});
             this.WarehouseItemDataGridView.DataSource = this.itemCategoriesBindingSource1;
-            this.WarehouseItemDataGridView.Location = new System.Drawing.Point(0, 23);
+            this.WarehouseItemDataGridView.Location = new System.Drawing.Point(0, 15);
+            this.WarehouseItemDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WarehouseItemDataGridView.Name = "WarehouseItemDataGridView";
             this.WarehouseItemDataGridView.ReadOnly = true;
             this.WarehouseItemDataGridView.RowTemplate.Height = 33;
-            this.WarehouseItemDataGridView.Size = new System.Drawing.Size(1629, 1349);
+            this.WarehouseItemDataGridView.Size = new System.Drawing.Size(1086, 863);
             this.WarehouseItemDataGridView.TabIndex = 1;
             // 
             // itemCategoryIDDataGridViewTextBoxColumn
@@ -330,7 +350,7 @@
             this.itemCategoryIDDataGridViewTextBoxColumn.HeaderText = "ItemCategoryID";
             this.itemCategoryIDDataGridViewTextBoxColumn.Name = "itemCategoryIDDataGridViewTextBoxColumn";
             this.itemCategoryIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.itemCategoryIDDataGridViewTextBoxColumn.Width = 204;
+            this.itemCategoryIDDataGridViewTextBoxColumn.Width = 133;
             // 
             // nameDataGridViewTextBoxColumn1
             // 
@@ -390,10 +410,11 @@
             this.VendorTabPage.Controls.Add(this.groupBox2);
             this.VendorTabPage.Controls.Add(this.groupBox1);
             this.VendorTabPage.Controls.Add(this.VendorDataGridView);
-            this.VendorTabPage.Location = new System.Drawing.Point(8, 39);
+            this.VendorTabPage.Location = new System.Drawing.Point(4, 25);
+            this.VendorTabPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VendorTabPage.Name = "VendorTabPage";
-            this.VendorTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.VendorTabPage.Size = new System.Drawing.Size(2248, 1446);
+            this.VendorTabPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.VendorTabPage.Size = new System.Drawing.Size(1501, 927);
             this.VendorTabPage.TabIndex = 1;
             this.VendorTabPage.Text = "Vendor Management Page";
             this.VendorTabPage.UseVisualStyleBackColor = true;
@@ -406,18 +427,21 @@
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(1343, 805);
+            this.groupBox2.Location = new System.Drawing.Point(895, 515);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(848, 572);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(565, 366);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Place Vendor Order";
             // 
             // exitVendorManagementPage
             // 
-            this.exitVendorManagementPage.Location = new System.Drawing.Point(279, 485);
+            this.exitVendorManagementPage.Location = new System.Drawing.Point(186, 310);
+            this.exitVendorManagementPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exitVendorManagementPage.Name = "exitVendorManagementPage";
-            this.exitVendorManagementPage.Size = new System.Drawing.Size(134, 46);
+            this.exitVendorManagementPage.Size = new System.Drawing.Size(89, 29);
             this.exitVendorManagementPage.TabIndex = 9;
             this.exitVendorManagementPage.Text = "Exit";
             this.exitVendorManagementPage.UseVisualStyleBackColor = true;
@@ -425,9 +449,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(69, 91);
+            this.label4.Location = new System.Drawing.Point(46, 58);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 25);
+            this.label4.Size = new System.Drawing.Size(80, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Vendor List";
             // 
@@ -436,9 +461,10 @@
             this.comboBox1.DataSource = this.vendorsBindingSource;
             this.comboBox1.DisplayMember = "Name";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(255, 91);
+            this.comboBox1.Location = new System.Drawing.Point(170, 58);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 33);
+            this.comboBox1.Size = new System.Drawing.Size(101, 24);
             this.comboBox1.TabIndex = 10;
             // 
             // vendorsBindingSource
@@ -448,26 +474,29 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(255, 212);
+            this.textBox3.Location = new System.Drawing.Point(170, 136);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 42);
+            this.textBox3.Size = new System.Drawing.Size(103, 28);
             this.textBox3.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 215);
+            this.label3.Location = new System.Drawing.Point(46, 138);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 25);
+            this.label3.Size = new System.Drawing.Size(91, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Item Quantity";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(267, 351);
+            this.button3.Location = new System.Drawing.Point(178, 225);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(138, 45);
+            this.button3.Size = new System.Drawing.Size(92, 29);
             this.button3.TabIndex = 7;
             this.button3.Text = "Place Order";
             this.button3.UseVisualStyleBackColor = true;
@@ -483,27 +512,31 @@
             this.groupBox1.Controls.Add(this.VendorIDText);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.DeleteVendorButton);
-            this.groupBox1.Location = new System.Drawing.Point(1343, 73);
+            this.groupBox1.Location = new System.Drawing.Point(895, 47);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(848, 706);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(565, 452);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vendor Management";
             // 
             // VendorID2
             // 
-            this.VendorID2.Location = new System.Drawing.Point(501, 306);
+            this.VendorID2.Location = new System.Drawing.Point(334, 196);
+            this.VendorID2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VendorID2.Multiline = true;
             this.VendorID2.Name = "VendorID2";
-            this.VendorID2.Size = new System.Drawing.Size(152, 42);
+            this.VendorID2.Size = new System.Drawing.Size(103, 28);
             this.VendorID2.TabIndex = 8;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(525, 238);
+            this.label10.Location = new System.Drawing.Point(350, 152);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 25);
+            this.label10.Size = new System.Drawing.Size(67, 17);
             this.label10.TabIndex = 7;
             this.label10.Text = "VendorID";
             // 
@@ -512,9 +545,10 @@
             this.VendorItemComboBox.DataSource = this.itemCategoriesBindingSource;
             this.VendorItemComboBox.DisplayMember = "Name";
             this.VendorItemComboBox.FormattingEnabled = true;
-            this.VendorItemComboBox.Location = new System.Drawing.Point(433, 411);
+            this.VendorItemComboBox.Location = new System.Drawing.Point(289, 263);
+            this.VendorItemComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VendorItemComboBox.Name = "VendorItemComboBox";
-            this.VendorItemComboBox.Size = new System.Drawing.Size(300, 33);
+            this.VendorItemComboBox.Size = new System.Drawing.Size(201, 24);
             this.VendorItemComboBox.TabIndex = 6;
             // 
             // itemCategoriesBindingSource
@@ -524,26 +558,29 @@
             // 
             // VendorNameTextBox
             // 
-            this.VendorNameTextBox.Location = new System.Drawing.Point(498, 150);
+            this.VendorNameTextBox.Location = new System.Drawing.Point(332, 96);
+            this.VendorNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VendorNameTextBox.Multiline = true;
             this.VendorNameTextBox.Name = "VendorNameTextBox";
-            this.VendorNameTextBox.Size = new System.Drawing.Size(152, 42);
+            this.VendorNameTextBox.Size = new System.Drawing.Size(103, 28);
             this.VendorNameTextBox.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(499, 86);
+            this.label2.Location = new System.Drawing.Point(333, 55);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 25);
+            this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Vendor Name";
             // 
             // AddVendorButton
             // 
-            this.AddVendorButton.Location = new System.Drawing.Point(512, 505);
+            this.AddVendorButton.Location = new System.Drawing.Point(341, 323);
+            this.AddVendorButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddVendorButton.Name = "AddVendorButton";
-            this.AddVendorButton.Size = new System.Drawing.Size(138, 45);
+            this.AddVendorButton.Size = new System.Drawing.Size(92, 29);
             this.AddVendorButton.TabIndex = 3;
             this.AddVendorButton.Text = "Add";
             this.AddVendorButton.UseVisualStyleBackColor = true;
@@ -551,26 +588,29 @@
             // 
             // VendorIDText
             // 
-            this.VendorIDText.Location = new System.Drawing.Point(31, 294);
+            this.VendorIDText.Location = new System.Drawing.Point(21, 188);
+            this.VendorIDText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VendorIDText.Multiline = true;
             this.VendorIDText.Name = "VendorIDText";
-            this.VendorIDText.Size = new System.Drawing.Size(152, 42);
+            this.VendorIDText.Size = new System.Drawing.Size(103, 28);
             this.VendorIDText.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 226);
+            this.label1.Location = new System.Drawing.Point(37, 145);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 25);
+            this.label1.Size = new System.Drawing.Size(67, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "VendorID";
             // 
             // DeleteVendorButton
             // 
-            this.DeleteVendorButton.Location = new System.Drawing.Point(45, 384);
+            this.DeleteVendorButton.Location = new System.Drawing.Point(30, 246);
+            this.DeleteVendorButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DeleteVendorButton.Name = "DeleteVendorButton";
-            this.DeleteVendorButton.Size = new System.Drawing.Size(138, 45);
+            this.DeleteVendorButton.Size = new System.Drawing.Size(92, 29);
             this.DeleteVendorButton.TabIndex = 0;
             this.DeleteVendorButton.Text = "Delete";
             this.DeleteVendorButton.UseVisualStyleBackColor = true;
@@ -585,10 +625,11 @@
             this.nameDataGridViewTextBoxColumn,
             this.itemProvidedItemCategoryIDDataGridViewTextBoxColumn});
             this.VendorDataGridView.DataSource = this.vendorsBindingSource;
-            this.VendorDataGridView.Location = new System.Drawing.Point(23, 73);
+            this.VendorDataGridView.Location = new System.Drawing.Point(15, 47);
+            this.VendorDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VendorDataGridView.Name = "VendorDataGridView";
             this.VendorDataGridView.RowTemplate.Height = 33;
-            this.VendorDataGridView.Size = new System.Drawing.Size(1294, 1304);
+            this.VendorDataGridView.Size = new System.Drawing.Size(863, 835);
             this.VendorDataGridView.TabIndex = 0;
             // 
             // vendorIDDataGridViewTextBoxColumn
@@ -617,10 +658,11 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(8, 39);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(2248, 1446);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(1501, 927);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Item Stock";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -635,10 +677,11 @@
             this.itemStoredItemCategoryIDDataGridViewTextBoxColumn,
             this.warehouseWarehouseIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.itemStocksBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 34);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 22);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1310, 1401);
+            this.dataGridView1.Size = new System.Drawing.Size(873, 897);
             this.dataGridView1.TabIndex = 0;
             // 
             // itemStockIDDataGridViewTextBoxColumn
@@ -648,7 +691,7 @@
             this.itemStockIDDataGridViewTextBoxColumn.HeaderText = "ItemStockID";
             this.itemStockIDDataGridViewTextBoxColumn.Name = "itemStockIDDataGridViewTextBoxColumn";
             this.itemStockIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.itemStockIDDataGridViewTextBoxColumn.Width = 171;
+            this.itemStockIDDataGridViewTextBoxColumn.Width = 111;
             // 
             // quantityDataGridViewTextBoxColumn
             // 
@@ -709,13 +752,14 @@
             // 
             // EmployeeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(2287, 1518);
+            this.ClientSize = new System.Drawing.Size(1449, 696);
             this.Controls.Add(this.EmployeeTabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EmployeeScreen";
             this.Text = "Employee Screen";
             this.Load += new System.EventHandler(this.EmployeeScreen_Load);

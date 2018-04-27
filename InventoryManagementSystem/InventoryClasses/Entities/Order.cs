@@ -49,16 +49,32 @@ namespace InventoryClasses.Entities
 
         // ------------ Functions
 
+
+        public bool AddItemToOrder(int itemID, int quantity)
+        {
+            if (itemID == 0 || quantity <= 0)
+                return false;
+
+
+
+            ItemCategory itemtoOrder;
+            using (InvContext ctx = new InvContext())
+            {
+                itemtoOrder = ctx.ItemCategories.FirstOrDefault(x => x.ItemCategoryID == itemID);
+            }
+
+            return AddItemToOrder(itemtoOrder, quantity);
+        }
+
+
         
         /// <summary>
         /// Adds an item with x quantity to the ordered list, but does NOT save
         /// </summary>
         public bool AddItemToOrder(ItemCategory item, int quantity)
         {
-            if (ItemsOrdered == null)
-            {
-                
-            }
+            if (item == null || quantity <= 0)
+                return false;
             else if (ItemsOrdered.Any(x => x.Item == item))
             {
                 // add to the quantity if the item is already in the ordered list
@@ -79,6 +95,7 @@ namespace InventoryClasses.Entities
         public bool Submit()
         {
 
+
             if (this.ItemsOrdered.Count == 0)
             {
                 Statics.DebugOut("Error: cannot submit an order without an items");
@@ -89,7 +106,7 @@ namespace InventoryClasses.Entities
             using (InvContext ctx = new InvContext())
             {
                 // ensure the context knows about this item in reference to the database
-                //ctx.Orders.Attach(this);
+                ctx.Customers.Attach(this.Customer);
 
                 ctx.Entry(this).State = this.OrderID == default(int) ? EntityState.Added : EntityState.Modified;
                 
