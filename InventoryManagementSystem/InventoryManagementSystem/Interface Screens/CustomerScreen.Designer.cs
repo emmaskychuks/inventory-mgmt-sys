@@ -31,28 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.CustomerTabControl = new System.Windows.Forms.TabControl();
             this.ItemTabPage = new System.Windows.Forms.TabPage();
-            this.ItemGridView = new System.Windows.Forms.DataGridView();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.itemCategoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cIS375_InventoryManagementDataSet = new InventoryManagementSystem.CIS375_InventoryManagementDataSet();
-            this.OrderTabPage = new System.Windows.Forms.TabPage();
-            this.itemCategoriesTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.ItemCategoriesTableAdapter();
-            this.OrderGridView = new System.Windows.Forms.DataGridView();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordersTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.OrdersTableAdapter();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOrderedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerCustomerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shippedFromWarehouseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.backOrderOrderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomernameLabel = new System.Windows.Forms.Label();
-            this.CustomerNameTextBox = new System.Windows.Forms.TextBox();
-            this.ReturnItemGroupBox = new System.Windows.Forms.GroupBox();
-            this.OrderSearchButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.ItemReturnQuantityTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PlaceOrderButton = new System.Windows.Forms.Button();
+            this.ItemGridView = new System.Windows.Forms.DataGridView();
             this.itemCategoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,20 +46,36 @@
             this.restockItemLimitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maxPerWarehouseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.locationInWarehouseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlaceOrderButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.OrderTabPage = new System.Windows.Forms.TabPage();
+            this.OrderSearchButton = new System.Windows.Forms.Button();
+            this.ReturnItemGroupBox = new System.Windows.Forms.GroupBox();
+            this.ItemReturnQuantityTextBox = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CustomerNameTextBox = new System.Windows.Forms.TextBox();
+            this.CustomernameLabel = new System.Windows.Forms.Label();
+            this.OrderGridView = new System.Windows.Forms.DataGridView();
+            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOrderedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerCustomerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemCategoriesTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.ItemCategoriesTableAdapter();
+            this.ordersTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.OrdersTableAdapter();
+            this.cIS375_InventoryManagementDataSet1 = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1();
+            this.ordersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ordersTableAdapter1 = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1TableAdapters.OrdersTableAdapter();
             this.CustomerTabControl.SuspendLayout();
             this.ItemTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemCategoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cIS375_InventoryManagementDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).BeginInit();
             this.OrderTabPage.SuspendLayout();
+            this.ReturnItemGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-            this.ReturnItemGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cIS375_InventoryManagementDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // CustomerTabControl
@@ -102,6 +104,61 @@
             this.ItemTabPage.Text = "Item Page";
             this.ItemTabPage.UseVisualStyleBackColor = true;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.itemCategoriesBindingSource;
+            this.comboBox2.DisplayMember = "Name";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(1826, 633);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(300, 33);
+            this.comboBox2.TabIndex = 5;
+            // 
+            // itemCategoriesBindingSource
+            // 
+            this.itemCategoriesBindingSource.DataMember = "ItemCategories";
+            this.itemCategoriesBindingSource.DataSource = this.cIS375_InventoryManagementDataSet;
+            // 
+            // cIS375_InventoryManagementDataSet
+            // 
+            this.cIS375_InventoryManagementDataSet.DataSetName = "CIS375_InventoryManagementDataSet";
+            this.cIS375_InventoryManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1708, 633);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Item:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1708, 835);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Quantity:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1872, 820);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(122, 59);
+            this.textBox1.TabIndex = 2;
+            // 
+            // PlaceOrderButton
+            // 
+            this.PlaceOrderButton.Location = new System.Drawing.Point(1854, 934);
+            this.PlaceOrderButton.Name = "PlaceOrderButton";
+            this.PlaceOrderButton.Size = new System.Drawing.Size(169, 69);
+            this.PlaceOrderButton.TabIndex = 1;
+            this.PlaceOrderButton.Text = "Place Order";
+            this.PlaceOrderButton.UseVisualStyleBackColor = true;
+            // 
             // ItemGridView
             // 
             this.ItemGridView.AllowUserToAddRows = false;
@@ -124,188 +181,6 @@
             this.ItemGridView.RowTemplate.Height = 33;
             this.ItemGridView.Size = new System.Drawing.Size(1605, 1158);
             this.ItemGridView.TabIndex = 0;
-            // 
-            // itemCategoriesBindingSource
-            // 
-            this.itemCategoriesBindingSource.DataMember = "ItemCategories";
-            this.itemCategoriesBindingSource.DataSource = this.cIS375_InventoryManagementDataSet;
-            // 
-            // cIS375_InventoryManagementDataSet
-            // 
-            this.cIS375_InventoryManagementDataSet.DataSetName = "CIS375_InventoryManagementDataSet";
-            this.cIS375_InventoryManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // OrderTabPage
-            // 
-            this.OrderTabPage.Controls.Add(this.OrderSearchButton);
-            this.OrderTabPage.Controls.Add(this.ReturnItemGroupBox);
-            this.OrderTabPage.Controls.Add(this.CustomerNameTextBox);
-            this.OrderTabPage.Controls.Add(this.CustomernameLabel);
-            this.OrderTabPage.Controls.Add(this.OrderGridView);
-            this.OrderTabPage.Location = new System.Drawing.Point(8, 39);
-            this.OrderTabPage.Name = "OrderTabPage";
-            this.OrderTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.OrderTabPage.Size = new System.Drawing.Size(2210, 1346);
-            this.OrderTabPage.TabIndex = 1;
-            this.OrderTabPage.Text = "Order Page";
-            this.OrderTabPage.UseVisualStyleBackColor = true;
-            // 
-            // itemCategoriesTableAdapter
-            // 
-            this.itemCategoriesTableAdapter.ClearBeforeFill = true;
-            // 
-            // OrderGridView
-            // 
-            this.OrderGridView.AllowUserToOrderColumns = true;
-            this.OrderGridView.AutoGenerateColumns = false;
-            this.OrderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.OrderGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderIDDataGridViewTextBoxColumn,
-            this.orderNumberDataGridViewTextBoxColumn,
-            this.dateOrderedDataGridViewTextBoxColumn,
-            this.customerCustomerIDDataGridViewTextBoxColumn,
-            this.shippedFromWarehouseIDDataGridViewTextBoxColumn,
-            this.backOrderOrderIDDataGridViewTextBoxColumn});
-            this.OrderGridView.DataSource = this.ordersBindingSource;
-            this.OrderGridView.Location = new System.Drawing.Point(6, 67);
-            this.OrderGridView.Name = "OrderGridView";
-            this.OrderGridView.RowTemplate.Height = 33;
-            this.OrderGridView.Size = new System.Drawing.Size(1335, 1158);
-            this.OrderGridView.TabIndex = 1;
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.cIS375_InventoryManagementDataSet;
-            // 
-            // ordersTableAdapter
-            // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
-            // 
-            // orderIDDataGridViewTextBoxColumn
-            // 
-            this.orderIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "OrderID";
-            this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
-            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // orderNumberDataGridViewTextBoxColumn
-            // 
-            this.orderNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.orderNumberDataGridViewTextBoxColumn.DataPropertyName = "OrderNumber";
-            this.orderNumberDataGridViewTextBoxColumn.HeaderText = "OrderNumber";
-            this.orderNumberDataGridViewTextBoxColumn.Name = "orderNumberDataGridViewTextBoxColumn";
-            // 
-            // dateOrderedDataGridViewTextBoxColumn
-            // 
-            this.dateOrderedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dateOrderedDataGridViewTextBoxColumn.DataPropertyName = "DateOrdered";
-            this.dateOrderedDataGridViewTextBoxColumn.HeaderText = "DateOrdered";
-            this.dateOrderedDataGridViewTextBoxColumn.Name = "dateOrderedDataGridViewTextBoxColumn";
-            // 
-            // customerCustomerIDDataGridViewTextBoxColumn
-            // 
-            this.customerCustomerIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.customerCustomerIDDataGridViewTextBoxColumn.DataPropertyName = "Customer_CustomerID";
-            this.customerCustomerIDDataGridViewTextBoxColumn.HeaderText = "Customer_CustomerID";
-            this.customerCustomerIDDataGridViewTextBoxColumn.Name = "customerCustomerIDDataGridViewTextBoxColumn";
-            this.customerCustomerIDDataGridViewTextBoxColumn.Visible = false;
-            this.customerCustomerIDDataGridViewTextBoxColumn.Width = 273;
-            // 
-            // shippedFromWarehouseIDDataGridViewTextBoxColumn
-            // 
-            this.shippedFromWarehouseIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.shippedFromWarehouseIDDataGridViewTextBoxColumn.DataPropertyName = "ShippedFrom_WarehouseID";
-            this.shippedFromWarehouseIDDataGridViewTextBoxColumn.HeaderText = "ShippedFrom_WarehouseID";
-            this.shippedFromWarehouseIDDataGridViewTextBoxColumn.Name = "shippedFromWarehouseIDDataGridViewTextBoxColumn";
-            this.shippedFromWarehouseIDDataGridViewTextBoxColumn.Visible = false;
-            this.shippedFromWarehouseIDDataGridViewTextBoxColumn.Width = 327;
-            // 
-            // backOrderOrderIDDataGridViewTextBoxColumn
-            // 
-            this.backOrderOrderIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.backOrderOrderIDDataGridViewTextBoxColumn.DataPropertyName = "BackOrder_OrderID";
-            this.backOrderOrderIDDataGridViewTextBoxColumn.HeaderText = "BackOrder_OrderID";
-            this.backOrderOrderIDDataGridViewTextBoxColumn.Name = "backOrderOrderIDDataGridViewTextBoxColumn";
-            this.backOrderOrderIDDataGridViewTextBoxColumn.Visible = false;
-            this.backOrderOrderIDDataGridViewTextBoxColumn.Width = 245;
-            // 
-            // CustomernameLabel
-            // 
-            this.CustomernameLabel.AutoSize = true;
-            this.CustomernameLabel.Location = new System.Drawing.Point(1715, 270);
-            this.CustomernameLabel.Name = "CustomernameLabel";
-            this.CustomernameLabel.Size = new System.Drawing.Size(166, 25);
-            this.CustomernameLabel.TabIndex = 2;
-            this.CustomernameLabel.Text = "Customer Name";
-            // 
-            // CustomerNameTextBox
-            // 
-            this.CustomerNameTextBox.Location = new System.Drawing.Point(1630, 309);
-            this.CustomerNameTextBox.Multiline = true;
-            this.CustomerNameTextBox.Name = "CustomerNameTextBox";
-            this.CustomerNameTextBox.Size = new System.Drawing.Size(350, 50);
-            this.CustomerNameTextBox.TabIndex = 3;
-            // 
-            // ReturnItemGroupBox
-            // 
-            this.ReturnItemGroupBox.Controls.Add(this.ItemReturnQuantityTextBox);
-            this.ReturnItemGroupBox.Controls.Add(this.comboBox1);
-            this.ReturnItemGroupBox.Controls.Add(this.button1);
-            this.ReturnItemGroupBox.Controls.Add(this.label1);
-            this.ReturnItemGroupBox.Location = new System.Drawing.Point(1436, 523);
-            this.ReturnItemGroupBox.Name = "ReturnItemGroupBox";
-            this.ReturnItemGroupBox.Size = new System.Drawing.Size(730, 702);
-            this.ReturnItemGroupBox.TabIndex = 4;
-            this.ReturnItemGroupBox.TabStop = false;
-            this.ReturnItemGroupBox.Text = "Return Item";
-            this.ReturnItemGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // OrderSearchButton
-            // 
-            this.OrderSearchButton.Location = new System.Drawing.Point(1720, 403);
-            this.OrderSearchButton.Name = "OrderSearchButton";
-            this.OrderSearchButton.Size = new System.Drawing.Size(143, 43);
-            this.OrderSearchButton.TabIndex = 5;
-            this.OrderSearchButton.Text = "Search";
-            this.OrderSearchButton.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(301, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Item Name";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(294, 545);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 43);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Return";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.itemCategoriesBindingSource;
-            this.comboBox1.DisplayMember = "Name";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(294, 207);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 33);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // ItemReturnQuantityTextBox
-            // 
-            this.ItemReturnQuantityTextBox.Location = new System.Drawing.Point(268, 351);
-            this.ItemReturnQuantityTextBox.Multiline = true;
-            this.ItemReturnQuantityTextBox.Name = "ItemReturnQuantityTextBox";
-            this.ItemReturnQuantityTextBox.Size = new System.Drawing.Size(197, 50);
-            this.ItemReturnQuantityTextBox.TabIndex = 8;
             // 
             // itemCategoryIDDataGridViewTextBoxColumn
             // 
@@ -348,7 +223,6 @@
             this.restockItemLimitDataGridViewTextBoxColumn.Name = "restockItemLimitDataGridViewTextBoxColumn";
             this.restockItemLimitDataGridViewTextBoxColumn.ReadOnly = true;
             this.restockItemLimitDataGridViewTextBoxColumn.Visible = false;
-            this.restockItemLimitDataGridViewTextBoxColumn.Width = 220;
             // 
             // maxPerWarehouseDataGridViewTextBoxColumn
             // 
@@ -368,50 +242,162 @@
             this.locationInWarehouseDataGridViewTextBoxColumn.ReadOnly = true;
             this.locationInWarehouseDataGridViewTextBoxColumn.Visible = false;
             // 
-            // PlaceOrderButton
+            // OrderTabPage
             // 
-            this.PlaceOrderButton.Location = new System.Drawing.Point(1854, 934);
-            this.PlaceOrderButton.Name = "PlaceOrderButton";
-            this.PlaceOrderButton.Size = new System.Drawing.Size(169, 69);
-            this.PlaceOrderButton.TabIndex = 1;
-            this.PlaceOrderButton.Text = "Place Order";
-            this.PlaceOrderButton.UseVisualStyleBackColor = true;
+            this.OrderTabPage.Controls.Add(this.OrderSearchButton);
+            this.OrderTabPage.Controls.Add(this.ReturnItemGroupBox);
+            this.OrderTabPage.Controls.Add(this.CustomerNameTextBox);
+            this.OrderTabPage.Controls.Add(this.CustomernameLabel);
+            this.OrderTabPage.Controls.Add(this.OrderGridView);
+            this.OrderTabPage.Location = new System.Drawing.Point(8, 39);
+            this.OrderTabPage.Name = "OrderTabPage";
+            this.OrderTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.OrderTabPage.Size = new System.Drawing.Size(2210, 1346);
+            this.OrderTabPage.TabIndex = 1;
+            this.OrderTabPage.Text = "Order Page";
+            this.OrderTabPage.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // OrderSearchButton
             // 
-            this.textBox1.Location = new System.Drawing.Point(1873, 821);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 59);
-            this.textBox1.TabIndex = 2;
+            this.OrderSearchButton.Location = new System.Drawing.Point(1720, 403);
+            this.OrderSearchButton.Name = "OrderSearchButton";
+            this.OrderSearchButton.Size = new System.Drawing.Size(143, 43);
+            this.OrderSearchButton.TabIndex = 5;
+            this.OrderSearchButton.Text = "Search";
+            this.OrderSearchButton.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // ReturnItemGroupBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1708, 835);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Quantity:";
+            this.ReturnItemGroupBox.Controls.Add(this.ItemReturnQuantityTextBox);
+            this.ReturnItemGroupBox.Controls.Add(this.comboBox1);
+            this.ReturnItemGroupBox.Controls.Add(this.button1);
+            this.ReturnItemGroupBox.Controls.Add(this.label1);
+            this.ReturnItemGroupBox.Location = new System.Drawing.Point(1436, 523);
+            this.ReturnItemGroupBox.Name = "ReturnItemGroupBox";
+            this.ReturnItemGroupBox.Size = new System.Drawing.Size(730, 702);
+            this.ReturnItemGroupBox.TabIndex = 4;
+            this.ReturnItemGroupBox.TabStop = false;
+            this.ReturnItemGroupBox.Text = "Return Item";
+            this.ReturnItemGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label3
+            // ItemReturnQuantityTextBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1708, 633);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Item:";
+            this.ItemReturnQuantityTextBox.Location = new System.Drawing.Point(268, 351);
+            this.ItemReturnQuantityTextBox.Multiline = true;
+            this.ItemReturnQuantityTextBox.Name = "ItemReturnQuantityTextBox";
+            this.ItemReturnQuantityTextBox.Size = new System.Drawing.Size(197, 50);
+            this.ItemReturnQuantityTextBox.TabIndex = 8;
             // 
-            // comboBox2
+            // comboBox1
             // 
-            this.comboBox2.DataSource = this.itemCategoriesBindingSource;
-            this.comboBox2.DisplayMember = "Name";
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(1873, 633);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 33);
-            this.comboBox2.TabIndex = 5;
+            this.comboBox1.DataSource = this.itemCategoriesBindingSource;
+            this.comboBox1.DisplayMember = "Name";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(294, 207);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 33);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(294, 545);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 43);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Return";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(301, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Item Name";
+            // 
+            // CustomerNameTextBox
+            // 
+            this.CustomerNameTextBox.Location = new System.Drawing.Point(1630, 309);
+            this.CustomerNameTextBox.Multiline = true;
+            this.CustomerNameTextBox.Name = "CustomerNameTextBox";
+            this.CustomerNameTextBox.Size = new System.Drawing.Size(350, 50);
+            this.CustomerNameTextBox.TabIndex = 3;
+            // 
+            // CustomernameLabel
+            // 
+            this.CustomernameLabel.AutoSize = true;
+            this.CustomernameLabel.Location = new System.Drawing.Point(1715, 270);
+            this.CustomernameLabel.Name = "CustomernameLabel";
+            this.CustomernameLabel.Size = new System.Drawing.Size(166, 25);
+            this.CustomernameLabel.TabIndex = 2;
+            this.CustomernameLabel.Text = "Customer Name";
+            // 
+            // OrderGridView
+            // 
+            this.OrderGridView.AllowUserToOrderColumns = true;
+            this.OrderGridView.AutoGenerateColumns = false;
+            this.OrderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.OrderGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderIDDataGridViewTextBoxColumn,
+            this.dateOrderedDataGridViewTextBoxColumn,
+            this.customerCustomerIDDataGridViewTextBoxColumn});
+            this.OrderGridView.DataSource = this.ordersBindingSource;
+            this.OrderGridView.Location = new System.Drawing.Point(6, 67);
+            this.OrderGridView.Name = "OrderGridView";
+            this.OrderGridView.RowTemplate.Height = 33;
+            this.OrderGridView.Size = new System.Drawing.Size(1335, 1158);
+            this.OrderGridView.TabIndex = 1;
+            // 
+            // orderIDDataGridViewTextBoxColumn
+            // 
+            this.orderIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
+            this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateOrderedDataGridViewTextBoxColumn
+            // 
+            this.dateOrderedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dateOrderedDataGridViewTextBoxColumn.DataPropertyName = "DateOrdered";
+            this.dateOrderedDataGridViewTextBoxColumn.HeaderText = "DateOrdered";
+            this.dateOrderedDataGridViewTextBoxColumn.Name = "dateOrderedDataGridViewTextBoxColumn";
+            // 
+            // customerCustomerIDDataGridViewTextBoxColumn
+            // 
+            this.customerCustomerIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.customerCustomerIDDataGridViewTextBoxColumn.DataPropertyName = "Customer_CustomerID";
+            this.customerCustomerIDDataGridViewTextBoxColumn.HeaderText = "Customer_CustomerID";
+            this.customerCustomerIDDataGridViewTextBoxColumn.Name = "customerCustomerIDDataGridViewTextBoxColumn";
+            this.customerCustomerIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataMember = "Orders";
+            this.ordersBindingSource.DataSource = this.cIS375_InventoryManagementDataSet;
+            // 
+            // itemCategoriesTableAdapter
+            // 
+            this.itemCategoriesTableAdapter.ClearBeforeFill = true;
+            // 
+            // ordersTableAdapter
+            // 
+            this.ordersTableAdapter.ClearBeforeFill = true;
+            // 
+            // cIS375_InventoryManagementDataSet1
+            // 
+            this.cIS375_InventoryManagementDataSet1.DataSetName = "CIS375_InventoryManagementDataSet1";
+            this.cIS375_InventoryManagementDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ordersBindingSource1
+            // 
+            this.ordersBindingSource1.DataMember = "Orders";
+            this.ordersBindingSource1.DataSource = this.cIS375_InventoryManagementDataSet1;
+            // 
+            // ordersTableAdapter1
+            // 
+            this.ordersTableAdapter1.ClearBeforeFill = true;
             // 
             // CustomerScreen
             // 
@@ -429,15 +415,17 @@
             this.CustomerTabControl.ResumeLayout(false);
             this.ItemTabPage.ResumeLayout(false);
             this.ItemTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemCategoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cIS375_InventoryManagementDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).EndInit();
             this.OrderTabPage.ResumeLayout(false);
             this.OrderTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             this.ReturnItemGroupBox.ResumeLayout(false);
             this.ReturnItemGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cIS375_InventoryManagementDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,6 +456,14 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button PlaceOrderButton;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private CIS375_InventoryManagementDataSet1 cIS375_InventoryManagementDataSet1;
+        private System.Windows.Forms.BindingSource ordersBindingSource1;
+        private CIS375_InventoryManagementDataSet1TableAdapters.OrdersTableAdapter ordersTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemCategoryIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
@@ -475,10 +471,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn restockItemLimitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maxPerWarehouseDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn locationInWarehouseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button PlaceOrderButton;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

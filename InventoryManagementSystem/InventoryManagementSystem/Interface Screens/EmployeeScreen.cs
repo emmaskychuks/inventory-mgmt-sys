@@ -61,7 +61,6 @@ namespace InventoryManagementSystem
 
         private void AddItemButton_Click(object sender, EventArgs e)
         {
-            ItemCategory itemCategory = new ItemCategory();
             ItemCategory.AddItem(ItemName.Text, ItemDescription.Text, ItemPrice.Text, 0);
         }
     }

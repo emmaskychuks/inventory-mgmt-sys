@@ -21,6 +21,8 @@ namespace InventoryManagementSystem
 
         private void CustomerScreen_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cIS375_InventoryManagementDataSet1.Orders' table. You can move, or remove it, as needed.
+            this.ordersTableAdapter1.Fill(this.cIS375_InventoryManagementDataSet1.Orders);
             // TODO: This line of code loads data into the 'cIS375_InventoryManagementDataSet.Orders' table. You can move, or remove it, as needed.
             this.ordersTableAdapter.Fill(this.cIS375_InventoryManagementDataSet.Orders);
             // TODO: This line of code loads data into the 'cIS375_InventoryManagementDataSet.ItemCategories' table. You can move, or remove it, as needed.
