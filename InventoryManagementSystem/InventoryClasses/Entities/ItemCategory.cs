@@ -39,6 +39,25 @@ namespace InventoryClasses.Entities
             }
         }
 
+        public static bool DeleteItem(string itemName)
+        {
+            using (InvContext context = new InvContext())
+            {
+                ItemCategory itemCategory = context.ItemCategories.FirstOrDefault(x => x.Name == itemName);
+                ItemStock itemStock = context.ItemStocks.FirstOrDefault(x => x.ItemStored.Name == itemName);
+
+                if (itemCategory != null && itemStock != null)
+                {
+                    context.ItemCategories.Remove(itemCategory);
+                    context.ItemStocks.Remove(itemStock);
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                    return false;
+            }
+        }
+
 
     }
 }

@@ -269,6 +269,7 @@
             this.DiscontinueItemButton.TabIndex = 12;
             this.DiscontinueItemButton.Text = "Discontinue";
             this.DiscontinueItemButton.UseVisualStyleBackColor = true;
+            this.DiscontinueItemButton.Click += new System.EventHandler(this.DiscontinueItemButton_Click);
             // 
             // WarehouseItemComboBox
             // 

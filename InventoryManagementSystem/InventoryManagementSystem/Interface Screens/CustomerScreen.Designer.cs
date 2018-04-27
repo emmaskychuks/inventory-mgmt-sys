@@ -32,15 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerScreen));
             this.CustomerTabControl = new System.Windows.Forms.TabControl();
             this.ItemTabPage = new System.Windows.Forms.TabPage();
-            this.submit = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cIS375_InventoryManagementDataSet = new InventoryManagementSystem.CIS375_InventoryManagementDataSet();
+            this.label5 = new System.Windows.Forms.Label();
+            this.SubmitOrderButton = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.itemCategoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cIS375_InventoryManagementDataSet = new InventoryManagementSystem.CIS375_InventoryManagementDataSet();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.PlaceOrderButton = new System.Windows.Forms.Button();
+            this.AddToCartButton = new System.Windows.Forms.Button();
             this.ItemGridView = new System.Windows.Forms.DataGridView();
             this.itemCategoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +56,7 @@
             this.existOrderPage = new System.Windows.Forms.Button();
             this.OrderSearchButton = new System.Windows.Forms.Button();
             this.ReturnItemGroupBox = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.ItemReturnQuantityTextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -61,6 +65,7 @@
             this.CustomernameLabel = new System.Windows.Forms.Label();
             this.OrderGridView = new System.Windows.Forms.DataGridView();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOrderedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerCustomerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -69,10 +74,12 @@
             this.cIS375_InventoryManagementDataSet1 = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1();
             this.ordersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ordersTableAdapter1 = new InventoryManagementSystem.CIS375_InventoryManagementDataSet1TableAdapters.OrdersTableAdapter();
+            this.customersTableAdapter = new InventoryManagementSystem.CIS375_InventoryManagementDataSetTableAdapters.CustomersTableAdapter();
             this.CustomerTabControl.SuspendLayout();
             this.ItemTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itemCategoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cIS375_InventoryManagementDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemCategoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).BeginInit();
             this.OrderTabPage.SuspendLayout();
             this.ReturnItemGroupBox.SuspendLayout();
@@ -94,13 +101,15 @@
             // 
             // ItemTabPage
             // 
-            this.ItemTabPage.Controls.Add(this.submit);
+            this.ItemTabPage.Controls.Add(this.comboBox3);
+            this.ItemTabPage.Controls.Add(this.label5);
+            this.ItemTabPage.Controls.Add(this.SubmitOrderButton);
             this.ItemTabPage.Controls.Add(this.exit);
             this.ItemTabPage.Controls.Add(this.comboBox2);
             this.ItemTabPage.Controls.Add(this.label3);
             this.ItemTabPage.Controls.Add(this.label2);
             this.ItemTabPage.Controls.Add(this.textBox1);
-            this.ItemTabPage.Controls.Add(this.PlaceOrderButton);
+            this.ItemTabPage.Controls.Add(this.AddToCartButton);
             this.ItemTabPage.Controls.Add(this.ItemGridView);
             this.ItemTabPage.Location = new System.Drawing.Point(8, 39);
             this.ItemTabPage.Name = "ItemTabPage";
@@ -110,19 +119,48 @@
             this.ItemTabPage.Text = "Item Page";
             this.ItemTabPage.UseVisualStyleBackColor = true;
             // 
-            // submit
+            // comboBox3
             // 
-            this.submit.Location = new System.Drawing.Point(1854, 1031);
-            this.submit.Name = "submit";
-            this.submit.Size = new System.Drawing.Size(178, 65);
-            this.submit.TabIndex = 7;
-            this.submit.Text = "Submit";
-            this.submit.UseVisualStyleBackColor = true;
+            this.comboBox3.DataSource = this.customersBindingSource;
+            this.comboBox3.DisplayMember = "Name";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(1826, 470);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(300, 33);
+            this.comboBox3.TabIndex = 9;
+            // 
+            // customersBindingSource
+            // 
+            this.customersBindingSource.DataMember = "Customers";
+            this.customersBindingSource.DataSource = this.cIS375_InventoryManagementDataSet;
+            // 
+            // cIS375_InventoryManagementDataSet
+            // 
+            this.cIS375_InventoryManagementDataSet.DataSetName = "CIS375_InventoryManagementDataSet";
+            this.cIS375_InventoryManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1682, 470);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 25);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Customers";
+            // 
+            // SubmitOrderButton
+            // 
+            this.SubmitOrderButton.Location = new System.Drawing.Point(1845, 1031);
+            this.SubmitOrderButton.Name = "SubmitOrderButton";
+            this.SubmitOrderButton.Size = new System.Drawing.Size(178, 65);
+            this.SubmitOrderButton.TabIndex = 7;
+            this.SubmitOrderButton.Text = "Submit";
+            this.SubmitOrderButton.UseVisualStyleBackColor = true;
             // 
             // exit
             // 
             this.exit.AllowDrop = true;
-            this.exit.Location = new System.Drawing.Point(1854, 1123);
+            this.exit.Location = new System.Drawing.Point(1845, 1122);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(178, 68);
             this.exit.TabIndex = 6;
@@ -144,11 +182,6 @@
             // 
             this.itemCategoriesBindingSource.DataMember = "ItemCategories";
             this.itemCategoriesBindingSource.DataSource = this.cIS375_InventoryManagementDataSet;
-            // 
-            // cIS375_InventoryManagementDataSet
-            // 
-            this.cIS375_InventoryManagementDataSet.DataSetName = "CIS375_InventoryManagementDataSet";
-            this.cIS375_InventoryManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -176,15 +209,15 @@
             this.textBox1.Size = new System.Drawing.Size(122, 59);
             this.textBox1.TabIndex = 2;
             // 
-            // PlaceOrderButton
+            // AddToCartButton
             // 
-            this.PlaceOrderButton.Location = new System.Drawing.Point(1854, 934);
-            this.PlaceOrderButton.Name = "PlaceOrderButton";
-            this.PlaceOrderButton.Size = new System.Drawing.Size(169, 69);
-            this.PlaceOrderButton.TabIndex = 1;
-            this.PlaceOrderButton.Text = "Place Order";
-            this.PlaceOrderButton.UseVisualStyleBackColor = true;
-            this.PlaceOrderButton.Click += new System.EventHandler(this.PlaceOrderButton_Click);
+            this.AddToCartButton.Location = new System.Drawing.Point(1845, 933);
+            this.AddToCartButton.Name = "AddToCartButton";
+            this.AddToCartButton.Size = new System.Drawing.Size(169, 69);
+            this.AddToCartButton.TabIndex = 1;
+            this.AddToCartButton.Text = "Add To Cart";
+            this.AddToCartButton.UseVisualStyleBackColor = true;
+            this.AddToCartButton.Click += new System.EventHandler(this.AddToCartButton_Click);
             // 
             // ItemGridView
             // 
@@ -303,9 +336,11 @@
             this.OrderSearchButton.TabIndex = 5;
             this.OrderSearchButton.Text = "Search";
             this.OrderSearchButton.UseVisualStyleBackColor = true;
+            this.OrderSearchButton.Click += new System.EventHandler(this.OrderSearchButton_Click);
             // 
             // ReturnItemGroupBox
             // 
+            this.ReturnItemGroupBox.Controls.Add(this.label4);
             this.ReturnItemGroupBox.Controls.Add(this.ItemReturnQuantityTextBox);
             this.ReturnItemGroupBox.Controls.Add(this.comboBox1);
             this.ReturnItemGroupBox.Controls.Add(this.button1);
@@ -317,6 +352,15 @@
             this.ReturnItemGroupBox.TabStop = false;
             this.ReturnItemGroupBox.Text = "Return Item";
             this.ReturnItemGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(301, 295);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 25);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Quantity";
             // 
             // ItemReturnQuantityTextBox
             // 
@@ -331,9 +375,9 @@
             this.comboBox1.DataSource = this.itemCategoriesBindingSource;
             this.comboBox1.DisplayMember = "Name";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(294, 207);
+            this.comboBox1.Location = new System.Drawing.Point(214, 201);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 33);
+            this.comboBox1.Size = new System.Drawing.Size(300, 33);
             this.comboBox1.TabIndex = 7;
             // 
             // button1
@@ -380,6 +424,7 @@
             this.OrderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OrderGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderIDDataGridViewTextBoxColumn,
+            this.OrderCode,
             this.dateOrderedDataGridViewTextBoxColumn,
             this.customerCustomerIDDataGridViewTextBoxColumn});
             this.OrderGridView.DataSource = this.ordersBindingSource;
@@ -397,6 +442,14 @@
             this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
             this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
             this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // OrderCode
+            // 
+            this.OrderCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.OrderCode.DataPropertyName = "OrderCode";
+            this.OrderCode.HeaderText = "OrderCode";
+            this.OrderCode.Name = "OrderCode";
+            this.OrderCode.ReadOnly = true;
             // 
             // dateOrderedDataGridViewTextBoxColumn
             // 
@@ -442,6 +495,10 @@
             // 
             this.ordersTableAdapter1.ClearBeforeFill = true;
             // 
+            // customersTableAdapter
+            // 
+            this.customersTableAdapter.ClearBeforeFill = true;
+            // 
             // CustomerScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -459,8 +516,9 @@
             this.CustomerTabControl.ResumeLayout(false);
             this.ItemTabPage.ResumeLayout(false);
             this.ItemTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itemCategoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cIS375_InventoryManagementDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemCategoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).EndInit();
             this.OrderTabPage.ResumeLayout(false);
             this.OrderTabPage.PerformLayout();
@@ -486,10 +544,7 @@
         private System.Windows.Forms.DataGridView OrderGridView;
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private CIS375_InventoryManagementDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOrderedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerCustomerIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn shippedFromWarehouseIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn backOrderOrderIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox CustomerNameTextBox;
@@ -500,7 +555,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button PlaceOrderButton;
+        private System.Windows.Forms.Button AddToCartButton;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -516,7 +571,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maxPerWarehouseDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn locationInWarehouseDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button exit;
-        private System.Windows.Forms.Button submit;
+        private System.Windows.Forms.Button SubmitOrderButton;
         private System.Windows.Forms.Button existOrderPage;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOrderedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerCustomerIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.BindingSource customersBindingSource;
+        private CIS375_InventoryManagementDataSetTableAdapters.CustomersTableAdapter customersTableAdapter;
     }
 }
