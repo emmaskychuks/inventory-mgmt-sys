@@ -39,8 +39,7 @@ namespace InventoryManagementSystem
 
         private void DeleteVendorButton_Click(object sender, EventArgs e)
         {
-            Vendor vendor = new Vendor();
-            int result = vendor.DeleteVendor(Convert.ToInt32(VendorIDText.Text));
+            int result = Vendor.DeleteVendor(Convert.ToInt32(VendorIDText.Text));
 
             if(result == 1)
                 MessageBox.Show("Vendor doesn't exist");
@@ -52,8 +51,7 @@ namespace InventoryManagementSystem
         {
             string nameOfVendorToAdd = VendorNameTextBox.Text;
             string nameOfItem = VendorItemComboBox.GetItemText(this.VendorItemComboBox.SelectedItem);
-            Vendor vendor = new Vendor();
-            bool result = vendor.AddVendor(nameOfVendorToAdd, nameOfItem);
+            bool result = Vendor.AddVendor(nameOfVendorToAdd, nameOfItem);
 
             if(!result)
                 MessageBox.Show("Item specified already exists");

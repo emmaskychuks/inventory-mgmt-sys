@@ -65,7 +65,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Vendor = new System.Windows.Forms.TextBox();
+            this.VendorID2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.VendorItemComboBox = new System.Windows.Forms.ComboBox();
             this.itemCategoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -449,7 +449,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Vendor);
+            this.groupBox1.Controls.Add(this.VendorID2);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.VendorItemComboBox);
             this.groupBox1.Controls.Add(this.VendorNameTextBox);
@@ -465,13 +465,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vendor Management";
             // 
-            // Vendor
+            // VendorID2
             // 
-            this.Vendor.Location = new System.Drawing.Point(501, 306);
-            this.Vendor.Multiline = true;
-            this.Vendor.Name = "Vendor";
-            this.Vendor.Size = new System.Drawing.Size(152, 42);
-            this.Vendor.TabIndex = 8;
+            this.VendorID2.Location = new System.Drawing.Point(501, 306);
+            this.VendorID2.Multiline = true;
+            this.VendorID2.Name = "VendorID2";
+            this.VendorID2.Size = new System.Drawing.Size(152, 42);
+            this.VendorID2.TabIndex = 8;
             // 
             // label10
             // 
@@ -775,7 +775,7 @@
         private System.Windows.Forms.Button AddItemButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox Vendor;
+        private System.Windows.Forms.TextBox VendorID2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView1;
