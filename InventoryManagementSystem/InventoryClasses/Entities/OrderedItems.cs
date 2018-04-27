@@ -7,11 +7,11 @@ namespace InventoryClasses.Entities
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderedItemsID { get; set; }
-
-
+        
         //public virtual Order order { get; set; } // this is only a foriegn key
         public int Quantity { get; set; }
         public virtual ItemCategory Item { get; set; }
+        public virtual Order Order { get; private set; }
 
         public OrderedItems()
         {

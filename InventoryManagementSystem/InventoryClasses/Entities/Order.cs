@@ -17,9 +17,9 @@ namespace InventoryClasses.Entities
         public DateTime DateOrdered { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual Warehouse ShippedFrom { get; set; }
-
-
+        
         // NOTICE: this collection does not require OrderedItems objects to have a literal Order reference
+        // Performs an automatic foriegn key lookup in the OrderedItems table
         public ICollection<OrderedItems> ItemsOrdered { get; set; }
 
 
