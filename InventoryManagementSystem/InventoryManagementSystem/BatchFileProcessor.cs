@@ -64,7 +64,7 @@ namespace InventoryManagementSystem
                             itemCategoryID = Convert.ToInt32(line.Substring(0, 5));
                             vendor.ItemProvided = itemCategory;
                             line = line.Remove(0, 5);
-                            itemStock.Quantity = Convert.ToInt32(line.Substring(2, 6));
+                            itemStock.Quantity = Convert.ToInt32(line.Substring(0, 6));
                             //Validate Item
                             itemStock.ItemStored = itemCategory;
                             counter++;
