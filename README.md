@@ -1,1 +1,1 @@
-# Inventory_Management_Future_Engineers
+# Software Engineeing 1 Project: Inventory Management System
