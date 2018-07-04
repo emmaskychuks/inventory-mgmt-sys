@@ -1,1 +1,1 @@
-# Software Engineeing 1 Project: Inventory Management System
+# Software Engineering 1 Project: Inventory Management System
